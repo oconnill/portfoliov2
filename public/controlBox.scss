@@ -9,3 +9,11 @@
     background: pink;
     height: 100px;
 }
+
+
+.control-header {
+    display: flex;
+    background: none;
+    border: 1px black solid;
+    justify-content: space-between;
+}

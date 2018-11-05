@@ -1,9 +1,8 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col small red"></div>
-            <div class="col small blue"></div>
-            <div class="col small">Here</div>
+    <div class="container control-box">
+        <div class="row control-header">
+            <div class="logo-font">Daniel O'Connell</div>
+            <div class="logo-icon">DO</div>
         </div>
     </div>
 </template>
