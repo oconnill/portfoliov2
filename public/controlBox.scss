@@ -1,15 +1,14 @@
-.control-header {
-  display: flex;
-  background: none;
-  border: 1px black solid;
-  justify-content: space-between;
-}
 
 .control-box {
   top: 50%;
   position: fixed;
+  border: 1px black solid;
 
   .control-header {
+    display: flex;
     padding: 5px;
+    background: none;
+    border-bottom: 1px black solid;
+    justify-content: space-between;
   }
 }
