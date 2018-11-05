@@ -1,19 +1,15 @@
-
-
-.red {
-    background: blue;
-    height: 100px;
-}
-
-.blue {
-    background: pink;
-    height: 100px;
-}
-
-
 .control-header {
-    display: flex;
-    background: none;
-    border: 1px black solid;
-    justify-content: space-between;
+  display: flex;
+  background: none;
+  border: 1px black solid;
+  justify-content: space-between;
+}
+
+.control-box {
+  top: 50%;
+  position: fixed;
+
+  .control-header {
+    padding: 5px;
+  }
 }
