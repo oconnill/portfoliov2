@@ -1,11 +1,10 @@
 <template>
     <div>
-        //if menu options default boolean
+
         <div class="control-box-body" v-for="standardMenuOption in standardMenuOptions">
             <h3 @click="activeClick(standardMenuOption.name)">{{ standardMenuOption.name }}</h3>
         </div>
-        //
-        //write code for layout with side panel etc title
+
     </div>
 </template>
 
@@ -17,11 +16,7 @@
         name: 'ControlBoxBody',
         data() {
             return {
-                standardMenuOptions: [
-                    { name: 'development' },
-                    { name: 'design' },
-                    { name: 'photography' }
-                ],
+                standardMenuOptions: [],
                 developmentOptions: [
                     {
                         name: 'RV Idaho',
@@ -80,6 +75,10 @@
                 developmentTitle: ''
             }
         },
+        mounted() {
+            debugger
+            return this.$store.state
+    },
         methods: {
             activeClick(choice) {
 
