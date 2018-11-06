@@ -2,7 +2,7 @@
     <div class="control-box">
         <div class="control-header">
             <div class="logo-font">Daniel O'Connell</div>
-            <div class="logo-icon">DO</div>
+            <div class="logo-icon" @click="menuReset()">DO</div>
         </div>
         <ControlBoxBody></ControlBoxBody>
     </div>
@@ -19,7 +19,16 @@
         name: 'app',
         components: {
             ControlBoxBody
+        },
+        methods: {
+            menuReset() {
+                debugger
+                this.$emit(this.standardMenuOptions, [
+                    { name: 'development' },
+                    { name: 'design' },
+                    { name: 'photography' }
+                ])
+            }
         }
-
     }
 </script>

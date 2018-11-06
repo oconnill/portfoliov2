@@ -1,8 +1,11 @@
 <template>
     <div>
+        //if menu options default boolean
         <div class="control-box-body" v-for="standardMenuOption in standardMenuOptions">
-            <h3><a href="" @click="activeClick(standardMenuOption.name)">{{ standardMenuOption.name }}</a></h3>
+            <h3 @click="activeClick(standardMenuOption.name)">{{ standardMenuOption.name }}</h3>
         </div>
+        //
+        //write code for layout with side panel etc title
     </div>
 </template>
 
@@ -74,7 +77,7 @@
                 ]
                 ,
                 isOpen: false,
-                menuChoice: ''
+                developmentTitle: ''
             }
         },
         methods: {
@@ -82,14 +85,14 @@
 
                 switch (choice) {
                     case 'development':
-                    this.standardMenuOptions = this.developmentOptions
-                    debugger
+                        this.developmentTitle = choice
+                        this.standardMenuOptions = this.developmentOptions
                         break
                     case 'design':
-                    this.standardMenuOptions = this.designOptions
+                        this.standardMenuOptions = this.designOptions
                         break
                     case 'photography':
-                    this.standardMenuOptions = this.photographyOptions
+                        this.standardMenuOptions = this.photographyOptions
                         break
                 }
 
