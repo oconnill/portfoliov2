@@ -22,12 +22,7 @@
         },
         methods: {
             menuReset() {
-                debugger
-                this.$emit(this.standardMenuOptions, [
-                    { name: 'development' },
-                    { name: 'design' },
-                    { name: 'photography' }
-                ])
+                this.$store.dispatch('menuReset')
             }
         }
     }

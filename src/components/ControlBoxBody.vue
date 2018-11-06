@@ -1,13 +1,10 @@
 <template>
     <div>
-
-        <div class="control-box-body" v-for="standardMenuOption in standardMenuOptions">
-            <h3 @click="activeClick(standardMenuOption.name)">{{ standardMenuOption.name }}</h3>
+        <div class="control-box-body" v-for="menuOption in menuOptions">
+            <h3 @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
         </div>
-
     </div>
 </template>
-
 
 <script>
     import '../../public/controlBoxBody.scss'
@@ -16,39 +13,22 @@
         name: 'ControlBoxBody',
         data() {
             return {
-                standardMenuOptions: [],
                 isOpen: false,
                 developmentTitle: ''
             }
         },
         mounted() {
-            /// returns default menu options
-            return this.standardMenuOptions = this.$store.state.standardMenuOptions
+            this.$store.state.menuOptions = this.$store.state.standardMenuOptions
         },
-//         computed: {
-// menud
-//         },
+        computed: {
+            menuOptions() {
+                return this.$store.state.menuOptions
+            },
+        },
         methods: {
             activeClick(choice) {
-                switch (choice) {
-                    case 'development':
-                        this.developmentTitle = choice
-                        this.standardMenuOptions = this.$store.state.developmentOptions 
-                        break
-                    case 'design':
-                        this.standardMenuOptions = this.$store.state.designOptions 
-                    case 'photography':
-                        this.standardMenuOptions = this.$store.state.photographyOptions
-                        break
-                }
-
+                this.$store.dispatch('menuChoice', choice)
             },
-            open() {
-
-                this.isOpen = true;
-                //if this create a switch statement then create the text to populate the direct menu
-            }
-
         }
     }
 </script>
