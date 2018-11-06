@@ -76,9 +76,9 @@
             }
         },
         mounted() {
-            debugger
-            return this.$store.state
-    },
+            /// returns default menu options
+            return this.standardMenuOptions = this.$store.state.standardMenuOptions
+        },
         methods: {
             activeClick(choice) {
 
