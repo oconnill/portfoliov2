@@ -5,13 +5,14 @@ vue.use(vuex);
 
 export const store = new vuex.Store({
   state: {
-    menuOptions:[],
+    menuOptions: [],
     standardMenuOptions: [
       { name: "development" },
       { name: "design" },
       { name: "photography" }
     ],
     developmentOptions: [
+      'development',
       {
         name: "RV Idaho",
         // image: require('../assets/rvidaho_hover.png'),
@@ -72,33 +73,26 @@ export const store = new vuex.Store({
     ]
   },
   mutations: {
-    //   setResults(state, data) {
-    //     state.results = data.results
-    //   },
-    //   setMyTunes(state, data){
-    //     state.myTunes = data
-    //   }
     setMenuOptions(state, data) {
-      debugger
       state.menuOptions = data;
     }
   },
   actions: {
     menuChoice({ commit, dispatch }, choice) {
-      debugger
       switch (choice) {
         case "development":
           commit("setMenuOptions", this.state.developmentOptions);
+          //dispatch a function that fades the text into view
           break;
         case "design":
-          this.standardMenuOptions = this.designOptions;
+          commit("setMenuOptions", this.state.designOptions);
           break;
         case "photography":
-          this.standardMenuOptions = this.photographyOptions;
+          commit("setMenuOptions", this.state.photographyOptions);
           break;
       }
     },
-    menuReset({commit, dispatch}) {
+    menuReset({ commit, dispatch }) {
       commit("setMenuOptions", this.state.standardMenuOptions);
     }
   }

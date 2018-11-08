@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <div class="control-box-body" v-for="menuOption in menuOptions">
-            <h3 @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
-        </div>
+    <div class="control-box-body">
+        <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
+    </div>
     </div>
 </template>
 
@@ -14,7 +13,8 @@
         data() {
             return {
                 isOpen: false,
-                developmentTitle: ''
+                developmentTitle: '',
+                standardView: false
             }
         },
         mounted() {
@@ -27,6 +27,8 @@
         },
         methods: {
             activeClick(choice) {
+                this.standardView = false;
+                debugger
                 this.$store.dispatch('menuChoice', choice)
             },
         }
