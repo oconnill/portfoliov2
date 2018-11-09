@@ -1,20 +1,24 @@
 <template>
   <div class="container">
       <div id="app">
-          <ControlBox></ControlBox>
+        <BackGrid>
+            <ControlBox></ControlBox>
+        </BackGrid>
         </div>
   </div>
 </template>
 
 <script>
-  import ControlBox from './components/ControlBox.vue'
+  import BackGrid from './components/BackGrid.vue'
+
 
   import '../node_modules/bootstrap/scss/bootstrap.scss';
 
   export default {
     name: 'app',
     components: {
-      ControlBox
+      ControlBox,
+      BackGrid
     }
   }
 </script>
