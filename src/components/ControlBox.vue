@@ -22,6 +22,7 @@
         },
         methods: {
             menuReset() {
+                this.$store.state.beenClicked = false;
                 this.$store.dispatch('menuReset')
             }
         }

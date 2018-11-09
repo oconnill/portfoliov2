@@ -6,6 +6,7 @@ vue.use(vuex);
 export const store = new vuex.Store({
   state: {
     menuOptions: [],
+    beenClicked: false,
     standardMenuOptions: [
       { name: "development"},
       { name: "design" },

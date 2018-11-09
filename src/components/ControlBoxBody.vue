@@ -1,10 +1,13 @@
 <template>
-    <div class="control-box-body">
-        <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
-        
-        <h3 v-for="menuOption in menuOptions">{{ menuOption.title }}</h3>
-       
-    </div>
+    <div>
+        <div v-show="!beenClicked" class="control-box-body">
+            <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
+        </div>
+        <div v-show="beenClicked" class="control-box-body">
+                <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
+                <h3 v-for="menuOption in menuOptions">{{ menuOption.title }}</h3>
+                <div>heerere</div>
+            </div>
     </div>
 </template>
 
@@ -26,9 +29,13 @@
             menuOptions() {
                 return this.$store.state.menuOptions
             },
+            beenClicked() {
+                return this.$store.state.beenClicked
+            }
         },
         methods: {
             activeClick(choice) {
+                this.$store.state.beenClicked = true;
                 this.$store.dispatch('menuChoice', choice)
             },
         }
