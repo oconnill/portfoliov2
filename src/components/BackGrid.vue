@@ -1,9 +1,9 @@
 <template>
         <div class="back-grid row">
-            <div class="col-3 pos-1">Position 1</div>
-            <div class="col-3 pos-2">Position 2</div>
-            <div class="col-3 pos-3">Position 3</div>
-            <div class="col-3 pos-4">Position 4</div>
+            <div class="col-3 pos-1"><img src="//picsum.photos/480/600"></div>
+            <div class="col-3 pos-2"><img src="//picsum.photos/500/500"></div>
+            <div class="col-3 pos-3"><img src="//picsum.photos/200/300"></div>
+            <div class="col-3 pos-4"><img src="//picsum.photos/200/300"></div>
             <ControlBox></ControlBox>
         </div>
         
