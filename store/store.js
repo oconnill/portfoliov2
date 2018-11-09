@@ -7,12 +7,12 @@ export const store = new vuex.Store({
   state: {
     menuOptions: [],
     standardMenuOptions: [
-      { name: "development" },
+      { name: "development"},
       { name: "design" },
       { name: "photography" }
     ],
     developmentOptions: [
-      'development',
+      {title: 'development'},
       {
         name: "RV Idaho",
         // image: require('../assets/rvidaho_hover.png'),
@@ -52,6 +52,7 @@ export const store = new vuex.Store({
       }
     ],
     designOptions: [
+      {title: 'design'},
       {
         name: "Yearly Poster Project 1986 - 1994",
         // image: require('../assets/univrss-hover.png'),
@@ -62,6 +63,7 @@ export const store = new vuex.Store({
       }
     ],
     photographyOptions: [
+      {title: 'photography'},
       {
         name: "Dublin Summer 1990",
         // image: require('../assets/univrss-hover.png'),
@@ -82,7 +84,7 @@ export const store = new vuex.Store({
       switch (choice) {
         case "development":
           commit("setMenuOptions", this.state.developmentOptions);
-          //dispatch a function that fades the text into view
+          //dispatch a function that fades the text into view and moves choice over to left
           break;
         case "design":
           commit("setMenuOptions", this.state.designOptions);
