@@ -85,7 +85,6 @@ export const store = new vuex.Store({
       switch (choice) {
         case "development":
           commit("setMenuOptions", this.state.developmentOptions);
-          //dispatch a function that fades the text into view and moves choice over to left
           break;
         case "design":
           commit("setMenuOptions", this.state.designOptions);
