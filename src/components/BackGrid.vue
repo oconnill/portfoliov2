@@ -1,11 +1,9 @@
 <template>
     <div>
-        <div v-if="menuOptions.length > 3">
-            <div v-for="menuOption in menuOptions" class="back-grid row">
-                <div class="col-3 pos-1"><img src="//picsum.photos/480/600"></div>
-                <div class="col-3 pos-2"><img src="//picsum.photos/500/500"></div>
-                <div class="col-3 pos-3"><img src="//picsum.photos/200/300"></div>
-                <div class="col-3 pos-4"><img src="//picsum.photos/200/300"></div>
+        <div>
+            <div class="back-grid row">
+                <div class="backgroundGridImage" v-if="menuOptions.length > 3" v-for="menuOption in menuOptions" v-bind:style="verticalHeight">{{
+                    menuOption.name }}</div>
             </div>
         </div>
         <ControlBox></ControlBox>
@@ -22,6 +20,13 @@
         components: {
             ControlBox
         },
+        data() {
+            return {
+                verticalHeight: {
+                    top: '95vh'
+                },
+            }
+        },
         methods: {
             menuReset() {
                 // this.$store.state.beenClicked = false;
@@ -31,6 +36,11 @@
         computed: {
             menuOptions() {
                 return this.$store.state.menuOptions
+            },
+            imageHeight() {
+                return {
+                    'top': '20px'
+                }
             }
         }
     }
