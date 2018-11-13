@@ -1,10 +1,16 @@
 <template>
     <div>
         <div>
-            <div class="back-grid row">
+            <div class="back-grid row"  v-show="!singlePageView">
                 <div class="col-3"></div>
                 <div class="backgroundGridImage col-3" v-if="menuOptions.length > 3" v-for="menuOption in menuOptions"
                     v-bind:style="{ top: menuOption.top }">{{ menuOption.name }}</div>
+            </div>
+
+            <div v-show="singlePageView">
+                <div v-for="projectAttribute in projectAttributes">
+                    {{ projectAttribute.name }}
+                </div>
             </div>
         </div>
         <ControlBox></ControlBox>
@@ -26,13 +32,18 @@
         },
         methods: {
             menuReset() {
-                // this.$store.state.beenClicked = false;
                 this.$store.dispatch('menuReset')
             },
         },
         computed: {
             menuOptions() {
                 return this.$store.state.menuOptions
+            },
+            projectAttributes() {
+                return this.$store.state.projectAttributes
+            },
+            singlePageView() {
+                return this.$store.state.singlePageView
             }
         }
     }

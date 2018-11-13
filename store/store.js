@@ -7,7 +7,9 @@ vue.use(vuex);
 export const store = new vuex.Store({
   state: {
     menuOptions: [],
+    projectAttributes: [],
     beenClicked: false,
+    singlePageView: false,
     standardMenuOptions: [
       { name: "development" },
       { name: "design" },
@@ -79,6 +81,9 @@ export const store = new vuex.Store({
   mutations: {
     setMenuOptions(state, data) {
       state.menuOptions = data;
+    },
+    setProjectChoice(state, data) {
+      state.projectAttributes = data;
     }
   },
   actions: {
@@ -95,14 +100,14 @@ export const store = new vuex.Store({
           break;
       }
     },
+    projectChoice({commit, dispatch}, choice) {
+      commit("setProjectChoice", choice);
+    },
     menuReset({ commit, dispatch }) {
       commit("setMenuOptions", this.state.standardMenuOptions);
-    },
-
+    }
   },
   methods: {}
 });
 
 export default store;
-
-

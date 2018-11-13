@@ -8,8 +8,6 @@
     </div>
 </template>
 
-
-
 <script>
     import ControlBoxBody from './ControlBoxBody.vue'
 
@@ -23,6 +21,7 @@
         methods: {
             menuReset() {
                 this.$store.state.beenClicked = false;
+                this.$store.state.singlePageView = false;
                 this.$store.dispatch('menuReset')
             }
         }
