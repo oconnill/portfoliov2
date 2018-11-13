@@ -2,7 +2,8 @@
     <div>
         <div>
             <div class="back-grid row">
-                <div class="backgroundGridImage" v-if="menuOptions.length > 3" v-for="menuOption in menuOptions"
+                <div class="col-3"></div>
+                <div class="backgroundGridImage col-3" v-if="menuOptions.length > 3" v-for="menuOption in menuOptions"
                     v-bind:style="{ top: menuOption.top }">{{ menuOption.name }}</div>
             </div>
         </div>
@@ -28,14 +29,6 @@
                 // this.$store.state.beenClicked = false;
                 this.$store.dispatch('menuReset')
             },
-            imageHeight() {
-                this.verticalHeight = this.verticalHeight + 25
-                console.log(this.verticalHeight)
-                
-                return {
-                    top: this.verticalHeight.toString() + 'vh'
-                }
-            }
         },
         computed: {
             menuOptions() {
