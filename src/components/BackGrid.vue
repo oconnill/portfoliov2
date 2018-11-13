@@ -2,8 +2,8 @@
     <div>
         <div>
             <div class="back-grid row">
-                <div class="backgroundGridImage" v-if="menuOptions.length > 3" v-for="menuOption in menuOptions" v-bind:style="verticalHeight">{{
-                    menuOption.name }}</div>
+                <div class="backgroundGridImage" v-if="menuOptions.length > 3" v-for="menuOption in menuOptions"
+                    v-bind:style="{ top: menuOption.top }">{{ menuOption.name }}</div>
             </div>
         </div>
         <ControlBox></ControlBox>
@@ -21,26 +21,25 @@
             ControlBox
         },
         data() {
-            return {
-                verticalHeight: {
-                    top: '95vh'
-                },
-            }
+            return {}
         },
         methods: {
             menuReset() {
                 // this.$store.state.beenClicked = false;
                 this.$store.dispatch('menuReset')
+            },
+            imageHeight() {
+                this.verticalHeight = this.verticalHeight + 25
+                console.log(this.verticalHeight)
+                
+                return {
+                    top: this.verticalHeight.toString() + 'vh'
+                }
             }
         },
         computed: {
             menuOptions() {
                 return this.$store.state.menuOptions
-            },
-            imageHeight() {
-                return {
-                    'top': '20px'
-                }
             }
         }
     }

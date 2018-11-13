@@ -1,5 +1,6 @@
 import vue from "vue";
 import vuex from "vuex";
+import { debug } from "util";
 
 vue.use(vuex);
 
@@ -8,12 +9,12 @@ export const store = new vuex.Store({
     menuOptions: [],
     beenClicked: false,
     standardMenuOptions: [
-      { name: "development"},
+      { name: "development" },
       { name: "design" },
       { name: "photography" }
     ],
     developmentOptions: [
-      {title: 'development'},
+      { title: "development" },
       {
         name: "RV Idaho",
         // image: require('../assets/rvidaho_hover.png'),
@@ -53,7 +54,7 @@ export const store = new vuex.Store({
       }
     ],
     designOptions: [
-      {title: 'design'},
+      { title: "design" },
       {
         name: "Yearly Poster Project 1986 - 1994",
         // image: require('../assets/univrss-hover.png'),
@@ -64,7 +65,7 @@ export const store = new vuex.Store({
       }
     ],
     photographyOptions: [
-      {title: 'photography'},
+      { title: "photography" },
       {
         name: "Dublin Summer 1990",
         // image: require('../assets/univrss-hover.png'),
@@ -96,8 +97,12 @@ export const store = new vuex.Store({
     },
     menuReset({ commit, dispatch }) {
       commit("setMenuOptions", this.state.standardMenuOptions);
-    }
-  }
+    },
+
+  },
+  methods: {}
 });
 
 export default store;
+
+

@@ -4,9 +4,9 @@
             <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
         </div>
         <div v-show="beenClicked" class="control-box-body">
-                <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
-                <h3 v-for="menuOption in menuOptions">{{ menuOption.title }}</h3>
-            </div>
+            <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
+            <h3 v-for="menuOption in menuOptions">{{ menuOption.title }}</h3>
+        </div>
     </div>
 </template>
 
@@ -36,7 +36,18 @@
             activeClick(choice) {
                 this.$store.state.beenClicked = true;
                 this.$store.dispatch('menuChoice', choice)
+                this.vhCreator(this.menuOptions)
             },
+            vhCreator(projects) {
+                for (var i = 1; i < projects.length; i++) {
+                    var project = {};
+                    if (i <= 0) {
+                        this.$store.state.menuOptions[i]["top"] = 10 + "vh";
+                    } else {
+                        this.$store.state.menuOptions[i]["top"] = i * 40 + "vh";
+                    }
+                }
+            }
         }
     }
 </script>
