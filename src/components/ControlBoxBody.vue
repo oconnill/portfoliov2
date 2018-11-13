@@ -5,7 +5,7 @@
         </div>
         <div v-show="beenClicked" class="control-box-body">
             <h3 v-for="menuOption in menuOptions" @click="openProject(menuOption.name)">{{ menuOption.name }}</h3>
-            <h3 v-for="menuOption in menuOptions">{{ menuOption.title }}</h3>
+            <h3 v-for="menuOption in menuOptions" @click="menuTitleReset()">{{ menuOption.title }}</h3>
         </div>
     </div>
 </template>
@@ -54,6 +54,9 @@
                 })
                 this.$store.dispatch('projectChoice', results);
                 this.$store.state.singlePageView = true;
+            },
+            menuTitleReset() {
+                this.$store.state.singlePageView = false;
             }
         }
     }
