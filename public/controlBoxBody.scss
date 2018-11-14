@@ -7,11 +7,16 @@
   position: absolute;
   top: 50%;
   right: 0;
+  width: 100%;
   transform: translate(0, -50%);
 }
 
 .menu-option-title {
-  transition: 5s;
+    transition: all 8s ease;
 }
 
-.menu-option-title.active {}
+.menu-option-title.active {
+    position: absolute;
+    left:0;
+    transition: all 300ms ease;
+}

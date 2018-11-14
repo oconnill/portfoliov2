@@ -28,6 +28,7 @@
                 this.$store.state.beenClicked = false;
                 this.$store.state.isActive = false;
                 this.$store.state.singlePageView = false;
+                this.$store.state.menuTitleActive = false;
                 this.menuTitleReset();
                 this.$store.dispatch('menuReset')
             },

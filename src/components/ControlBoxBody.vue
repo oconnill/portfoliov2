@@ -1,11 +1,7 @@
 <template>
     <div class="control-box-cont">
         <div class="control-box-body">
-            <ul>
-                <li v-for="menuTitle in menuTitles" v-show="menuTitle.show" @click="activeClick(menuTitle.title)">
-                    <h3>{{ menuTitle.title }}</h3>
-                </li>
-            </ul>
+                    <h3 class="menu-option-title" v-for="menuTitle in menuTitles" v-bind:class="{ active: menuTitleActive }" v-show="menuTitle.show" @click="activeClick(menuTitle.title)">{{ menuTitle.title }}</h3>
         </div>
         <div v-show="beenClicked">
             <div class="control-box-body">
@@ -37,7 +33,7 @@
             beenClicked() {
                 return this.$store.state.beenClicked
             },
-            menuTitle() {
+            menuTitleActive() {
                 return this.$store.state.menuTitleActive
             },
             menuTitles() {
