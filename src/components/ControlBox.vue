@@ -6,9 +6,9 @@
         </div>
         <ControlBoxBody></ControlBoxBody>
         <div class="control-footer">
-            <a href="https://www.linkedin.com/in/danieloconne11/"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/oconnill"><i class="fab fa-github"></i></a>
-            <a href=""><i class="far fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/danieloconne11/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/oconnill" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="" target="_blank"><i class="far fa-envelope"></i></a>
         </div>
     </div>
 </template>
@@ -35,7 +35,6 @@
                 let arr = this.$store.state.menuTitles
 
                 for (var i = 0; i < arr.length; i++) {
-                    console.log(arr[i].show)
                     arr[i].show = true;
                 }
             }

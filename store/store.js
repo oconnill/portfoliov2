@@ -26,11 +26,6 @@ export const store = new vuex.Store({
           show: true
       }
   ],
-    standardMenuOptions: [
-      { name: "development" },
-      { name: "design" },
-      { name: "photography" }
-    ],
     developmentOptions: [
       { title: "development" },
       {

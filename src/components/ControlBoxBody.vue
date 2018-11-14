@@ -30,9 +30,6 @@
                 developmentTitle: '',
             }
         },
-        mounted() {
-            this.$store.state.menuOptions = this.$store.state.standardMenuOptions
-        },
         computed: {
             menuOptions() {
                 return this.$store.state.menuOptions
@@ -55,6 +52,7 @@
                 this.vhCreator(this.menuOptions);
                 this.$store.state.menuTitleActive = true;
                 this.$store.state.isActive = true;
+                this.$store.state.singlePageView = false;
             },
             vhCreator(projects) {
                 for (var i = 1; i < projects.length; i++) {
@@ -82,9 +80,6 @@
                     }
                 }
             },
-            menuTitleReset() {
-                this.$store.state.singlePageView = false;
-            }
         }
     }
 </script>
