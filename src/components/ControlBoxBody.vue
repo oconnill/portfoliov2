@@ -1,13 +1,20 @@
 <template>
     <div class="control-box-cont">
-        <div v-show="!beenClicked" class="control-box-body">
+        <div class="control-box-body">
             <ul>
-                <li v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)"><h3>{{ menuOption.name }}</h3></li>
+                <li v-for="menuTitle in menuTitles" v-show="menuTitle.show" @click="activeClick(menuTitle.title)">
+                    <h3>{{ menuTitle.title }}</h3>
+                </li>
             </ul>
         </div>
-        <div v-show="beenClicked" class="control-box-body">
-            <h3 v-for="menuOption in menuOptions" @click="openProject(menuOption.name)">{{ menuOption.name }}</h3>
-            <h3 v-for="menuOption in menuOptions" @click="menuTitleReset()">{{ menuOption.title }}</h3>
+        <div v-show="beenClicked">
+            <div class="control-box-body">
+                <ul>
+                    <li v-for="menuOption in menuOptions" @click="openProject(menuOption.name)">
+                        <h3>{{ menuOption.name }}</h3>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -32,13 +39,21 @@
             },
             beenClicked() {
                 return this.$store.state.beenClicked
+            },
+            menuTitle() {
+                return this.$store.state.menuTitleActive
+            },
+            menuTitles() {
+                return this.$store.state.menuTitles
             }
         },
         methods: {
             activeClick(choice) {
                 this.$store.state.beenClicked = true;
                 this.$store.dispatch('menuChoice', choice);
+                this.menuTitleShow(choice);
                 this.vhCreator(this.menuOptions);
+                this.$store.state.menuTitleActive = true;
                 this.$store.state.isActive = true;
             },
             vhCreator(projects) {
@@ -57,6 +72,15 @@
                 })
                 this.$store.dispatch('projectChoice', results);
                 this.$store.state.singlePageView = true;
+            },
+            menuTitleShow(choice) {
+                let arr = this.$store.state.menuTitles
+                for (var i = 0; i < arr.length; i++) {
+                    var obj = arr[i];
+                    if (obj.title !== choice) {
+                        obj.show = false
+                    }
+                }
             },
             menuTitleReset() {
                 this.$store.state.singlePageView = false;

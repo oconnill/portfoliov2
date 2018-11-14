@@ -9,8 +9,23 @@ export const store = new vuex.Store({
     menuOptions: [],
     projectAttributes: [],
     isActive: false,
+    menuTitleActive: false,
     beenClicked: false,
     singlePageView: false,
+    menuTitles: [
+      {
+          title: 'development',
+          show: true
+      },
+      {
+          title: 'design',
+          show: true
+      },
+      {
+          title: 'photography',
+          show: true
+      }
+  ],
     standardMenuOptions: [
       { name: "development" },
       { name: "design" },
@@ -85,6 +100,9 @@ export const store = new vuex.Store({
     },
     setProjectChoice(state, data) {
       state.projectAttributes = data;
+    },
+    setMenuTitles(state,data) {
+      state.menuOptions = data
     }
   },
   actions: {
@@ -101,6 +119,11 @@ export const store = new vuex.Store({
           break;
       }
     },
+    // getMenuTitles({commit, dispatch}) {
+    // let menuTitles = []
+
+    //   commit("setMenuTitles", menuTitles)
+    // },
     projectChoice({commit, dispatch}, choice) {
       commit("setProjectChoice", choice);
     },

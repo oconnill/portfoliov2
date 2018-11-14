@@ -1,5 +1,5 @@
 <template>
-    <div  v-bind:class="{ active: isActive }" class="control-box">
+    <div v-bind:class="{ active: isActive }" class="control-box">
         <div class="control-header">
             <div class="logo-font">Daniel O'Connell</div>
             <div class="logo-icon" @click="menuReset()">DO</div>
@@ -28,13 +28,25 @@
                 this.$store.state.beenClicked = false;
                 this.$store.state.isActive = false;
                 this.$store.state.singlePageView = false;
+                this.menuTitleReset();
                 this.$store.dispatch('menuReset')
+            },
+            menuTitleReset() {
+                let arr = this.$store.state.menuTitles
+
+                for (var i = 0; i < arr.length; i++) {
+                    console.log(arr[i].show)
+                    arr[i].show = true;
+                }
             }
         },
-        computed: {
-            isActive() {
-                return this.$store.state.isActive
+            computed: {
+                isActive() {
+                    return this.$store.state.isActive
+                },
+                menuTitles() {
+                    return this.$store.state.menuTitles
+                }
             }
         }
-    }
 </script>
