@@ -2,7 +2,12 @@
 .control-box {
   top: 50%;
   left: 50%;
+  margin-top: -169px; /*set to a negative number 1/2 of your height*/
+  margin-left: -157px; /*set to a negative number 1/2 of your width*/
+  overflow: hidden;
   position: fixed;
+  height: 338px;
+  width: 314px;
   border: 1px black solid;
   transition:2s;
 
@@ -16,7 +21,7 @@
 }
 
 .control-box.active {
-    left: 10%;
+    left: 165px;
 }
 
 

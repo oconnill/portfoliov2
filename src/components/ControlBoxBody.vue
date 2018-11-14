@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <div class="control-box-cont">
         <div v-show="!beenClicked" class="control-box-body">
-            <h3 v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)">{{ menuOption.name }}</h3>
+            <ul>
+                <li v-for="menuOption in menuOptions" @click="activeClick(menuOption.name)"><h3>{{ menuOption.name }}</h3></li>
+            </ul>
         </div>
         <div v-show="beenClicked" class="control-box-body">
             <h3 v-for="menuOption in menuOptions" @click="openProject(menuOption.name)">{{ menuOption.name }}</h3>
