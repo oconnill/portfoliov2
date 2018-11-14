@@ -46,8 +46,8 @@
                 this.$store.dispatch('menuChoice', choice);
                 this.menuTitleShow(choice);
                 this.vhCreator(this.menuOptions);
-                this.$store.state.menuTitleActive = true;
                 this.$store.state.isActive = true;
+                this.$store.state.menuTitleActive = true;
                 this.$store.state.singlePageView = false;
             },
             vhCreator(projects) {

@@ -12,11 +12,14 @@
 }
 
 .menu-option-title {
-    transition: all 8s ease;
+    // animation: fadeout 2s;
 }
 
 .menu-option-title.active {
-    position: absolute;
-    left:0;
-    transition: all 300ms ease;
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
