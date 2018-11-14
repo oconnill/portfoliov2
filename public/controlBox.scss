@@ -1,4 +1,3 @@
-
 .control-box {
   top: 50%;
   left: 50%;
@@ -9,7 +8,7 @@
   height: 338px;
   width: 314px;
   border: 1px black solid;
-  transition:2s;
+  transition: 2s;
 
   .control-header {
     display: flex;
@@ -18,10 +17,25 @@
     border-bottom: 1px black solid;
     justify-content: space-between;
   }
+
+  .control-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px;
+    background: none;
+    border-top: 1px black solid;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+
+    a {
+        padding-right: 5px;
+        color: black;
+    }
+  }
 }
 
 .control-box.active {
-    left: 165px;
+  left: 165px;
 }
-
-
