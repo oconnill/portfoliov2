@@ -37,6 +37,7 @@
                 this.$store.state.beenClicked = true;
                 this.$store.dispatch('menuChoice', choice);
                 this.vhCreator(this.menuOptions);
+                this.$store.state.isActive = true;
             },
             vhCreator(projects) {
                 for (var i = 1; i < projects.length; i++) {

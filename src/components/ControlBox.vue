@@ -1,5 +1,5 @@
 <template>
-    <div class="control-box">
+    <div  v-bind:class="{ active: isActive }" class="control-box">
         <div class="control-header">
             <div class="logo-font">Daniel O'Connell</div>
             <div class="logo-icon" @click="menuReset()">DO</div>
@@ -21,8 +21,14 @@
         methods: {
             menuReset() {
                 this.$store.state.beenClicked = false;
+                this.$store.state.isActive = false;
                 this.$store.state.singlePageView = false;
                 this.$store.dispatch('menuReset')
+            }
+        },
+        computed: {
+            isActive() {
+                return this.$store.state.isActive
             }
         }
     }

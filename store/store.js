@@ -8,6 +8,7 @@ export const store = new vuex.Store({
   state: {
     menuOptions: [],
     projectAttributes: [],
+    isActive: false,
     beenClicked: false,
     singlePageView: false,
     standardMenuOptions: [
