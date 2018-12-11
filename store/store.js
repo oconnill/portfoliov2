@@ -27,7 +27,6 @@ export const store = new vuex.Store({
       }
   ],
     developmentOptions: [
-      { title: "development" },
       {
         name: "RV Idaho",
         // image: require('../assets/rvidaho_hover.png'),
@@ -67,7 +66,6 @@ export const store = new vuex.Store({
       }
     ],
     designOptions: [
-      { title: "design" },
       {
         name: "Yearly Poster Project 1986 - 1994",
         // image: require('../assets/univrss-hover.png'),
@@ -78,7 +76,6 @@ export const store = new vuex.Store({
       }
     ],
     photographyOptions: [
-      { title: "photography" },
       {
         name: "Dublin Summer 1990",
         // image: require('../assets/univrss-hover.png'),

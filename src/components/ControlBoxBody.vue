@@ -1,13 +1,13 @@
 <template>
     <div class="control-box-cont">
-        <div class="control-box-body">
-                    <h3 class="menu-option-title" v-for="menuTitle in menuTitles" v-bind:class="{ active: menuTitleActive }" v-show="menuTitle.show" @click="activeClick(menuTitle.title)">{{ menuTitle.title }}</h3>
+        <div class="control-box-title" v-bind:class="{ active: menuTitleActive }">
+                    <h3 class="menu-option-title" v-for="menuTitle in menuTitles" v-show="menuTitle.show" @click="activeClick(menuTitle.title)">{{ menuTitle.title }}</h3>
         </div>
         <div v-show="beenClicked">
             <div class="control-box-body">
                 <ul>
                     <li v-for="menuOption in menuOptions" @click="openProject(menuOption.name)">
-                        <h3>{{ menuOption.name }}</h3>
+                        <h3 >{{ menuOption.name }}</h3>
                     </li>
                 </ul>
             </div>

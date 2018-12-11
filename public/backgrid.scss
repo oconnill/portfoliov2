@@ -17,3 +17,23 @@
 .backgroundGridImage {
     position: relative;
 }
+
+.red {
+    width: 100%;
+    height: 40px;
+    background: red
+}
+
+.green {
+    width: 100%;
+    height: 40px;
+    background: green;
+}
+
+.project-text-block {
+    font-size: 12px;
+    text-align: center;
+    max-width: 500px;
+    line-height: 1.5;
+    margin: auto;
+}
