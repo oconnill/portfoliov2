@@ -19,12 +19,15 @@
         <div class="col-9 green" v-for="projectAttribute in projectAttributes">
           <h2>{{ projectAttribute.name }}</h2>
           <div v-bind:class="projectAttribute.type">
+            <div class="browser-input">{{ typedUrl }}</div>
             <div class="mock-up-frame">
               <img src="https://picsum.photos/1200/600/?random" />
             </div>
           </div>
 
-          <div class="project-text-block">{{ projectAttribute.description }}</div>
+          <div class="project-text-block">
+            {{ projectAttribute.description }}
+          </div>
         </div>
       </div>
     </div>
@@ -47,7 +50,7 @@
     methods: {
       menuReset() {
         this.$store.dispatch("menuReset");
-      }
+      },
     },
     computed: {
       menuOptions() {
@@ -58,6 +61,9 @@
       },
       singlePageView() {
         return this.$store.state.singlePageView;
+      },
+      typedUrl() {
+        return this.$store.state.typedUrl;
       }
     }
   };

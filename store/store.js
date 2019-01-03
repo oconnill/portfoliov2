@@ -12,6 +12,7 @@ export const store = new vuex.Store({
     menuTitleActive: false,
     beenClicked: false,
     singlePageView: false,
+    typedUrl: '',
     menuTitles: [
       {
           title: 'development',
@@ -116,11 +117,6 @@ export const store = new vuex.Store({
           break;
       }
     },
-    // getMenuTitles({commit, dispatch}) {
-    // let menuTitles = []
-
-    //   commit("setMenuTitles", menuTitles)
-    // },
     projectChoice({commit, dispatch}, choice) {
       commit("setProjectChoice", choice);
     },
