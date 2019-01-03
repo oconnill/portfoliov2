@@ -32,14 +32,16 @@ export const store = new vuex.Store({
         // image: require('../assets/rvidaho_hover.png'),
         description:
           "Built with a development team, a form for brochure sign-up.  All entries could be exported by admin to a .csv file type. Laravel, Javascript, and WordPress were used in the development.",
-        demoLink: "https://rvidaho.org/free-camping-guide/"
+        demoLink: "https://rvidaho.org/free-camping-guide/",
+        type: "browser-mockup with-url"
       },
       {
         name: "Brundage",
         // image: require('../assets/brundage_hover.png'),
         description:
           "Updated homepage weather widget and worked to bring in a graph displaying snow data for base and summit depth",
-        demoLink: "https://brundage.com/"
+        demoLink: "https://brundage.com/",
+        type: "browser-mockup with-url"
       },
       {
         name: "Kanban",
@@ -47,14 +49,16 @@ export const store = new vuex.Store({
         description:
           "Organize work flow with custom boards, lists, tasks, and notes",
         demoLink: "https://kanban-oconnell.herokuapp.com/",
-        gitHubLink: "https://github.com/oconnill/vue-kanban"
+        gitHubLink: "https://github.com/oconnill/vue-kanban",
+        type: "browser-mockup with-url"
       },
       {
         name: "Music Selector",
         // image: require('../assets/music-selector-hover.png'),
         description: "Build a playlist of songs from the I Tunes API",
         demoLink: "https://vue-music-oconnell.herokuapp.com/",
-        gitHubLink: "https://github.com/oconnill/vue-music-checkpoint"
+        gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
+        type: "browser-mockup with-url"
       },
       {
         name: "Univ-Rss",
@@ -62,7 +66,8 @@ export const store = new vuex.Store({
         description:
           "Personal dashboard for weather, rss feeds, local events, todo lists, photos, and spotify",
         demoLink: "",
-        gitHubLink: "https://github.com/oconnill/Univ-Rss"
+        gitHubLink: "https://github.com/oconnill/Univ-Rss",
+        type: "browser-mockup with-url"
       }
     ],
     designOptions: [

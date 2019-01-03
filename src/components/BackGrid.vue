@@ -18,7 +18,7 @@
 
         <div class="col-9 green" v-for="projectAttribute in projectAttributes">
           <h2>{{ projectAttribute.name }}</h2>
-          <div class="browser-mockup with-url">
+          <div v-bind:class="projectAttribute.type">
             <div class="mock-up-frame">
               <img src="https://picsum.photos/1200/600/?random" />
             </div>
