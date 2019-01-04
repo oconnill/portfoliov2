@@ -17,11 +17,13 @@
         <div class="col-3 red"></div>
 
         <div class="col-9 green" v-for="projectAttribute in projectAttributes">
-          <h2>{{ projectAttribute.name }}</h2>
+          <div class="project-title">
+            <h2>{{ projectAttribute.name }}</h2>
+          </div>
           <div v-bind:class="projectAttribute.type">
             <div class="browser-input">{{ typedUrl }}</div>
             <div class="mock-up-frame">
-              <img src="https://picsum.photos/1200/600/?random" />
+              <img src="https://picsum.photos/1240/790/?random" />
             </div>
           </div>
 
@@ -50,7 +52,7 @@
     methods: {
       menuReset() {
         this.$store.dispatch("menuReset");
-      },
+      }
     },
     computed: {
       menuOptions() {
