@@ -42,24 +42,27 @@
 .do-logo {
   display: flex;
 
-
   .do-logo-d {
     height: 20px;
     width: 14px;
     border-bottom-right-radius: 40px;
     border-top-right-radius: 40px;
-    background-color: #3d9970;
+    // background-color: #3d9970;
+    animation: color_change 5s infinite alternate;
     margin-left: 4px;
   }
-  
+
   .do-logo-o {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: #3d9970;
+    // background-color: #3d9970;
+    animation: color_change 5s infinite alternate;
     margin-left: 4px;
   }
-
 }
 
-
+@keyframes color_change {
+	from { background-color: blue; }
+	to { background-color: red; }
+}
