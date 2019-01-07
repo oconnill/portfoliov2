@@ -61,6 +61,18 @@
 }
 
 @keyframes color_change {
-	from { background-color: blue; }
-	to { background-color: red; }
+  from {
+    background-color: blue;
+  }
+  to {
+    background-color: red;
+  }
 }
+
+@media (max-width: 768px) {
+  .control-box {
+    display: none;
+  }
+}
+
+
