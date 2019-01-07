@@ -12,21 +12,21 @@ export const store = new vuex.Store({
     menuTitleActive: false,
     beenClicked: false,
     singlePageView: false,
-    typedUrl: '',
+    typedUrl: "",
     menuTitles: [
       {
-          title: 'development',
-          show: true
+        title: "development",
+        show: true
       },
       {
-          title: 'design',
-          show: true
+        title: "design",
+        show: true
       },
       {
-          title: 'photography',
-          show: true
+        title: "photography",
+        show: true
       }
-  ],
+    ],
     developmentOptions: [
       {
         name: "RV Idaho",
@@ -99,12 +99,30 @@ export const store = new vuex.Store({
     setProjectChoice(state, data) {
       state.projectAttributes = data;
     },
-    setMenuTitles(state,data) {
-      state.menuOptions = data
+    setMenuTitles(state, data) {
+      state.menuOptions = data;
+    },
+    //Active Click Setters
+    setBeenClicked(state, data) {
+      state.beenClicked = data;
+    },
+    setMenuChoice(state, data) {
+      state.menuChoice = data;
+    },
+    setIsActive(state, data) {
+      state.isActive = data;
+    },
+    setMenuTitleActive(state, data) {
+      state.MenuTitleActive = data;
+    },
+    setSinglePageView(state, data) {
+      state.SinglePageView = data;
     }
   },
   actions: {
-    menuChoice({ commit, dispatch }, choice) {
+    menuChoice({ commit, dispatch }) {
+      let choice = this.state.menuChoice;
+
       switch (choice) {
         case "development":
           commit("setMenuOptions", this.state.developmentOptions);
@@ -117,11 +135,53 @@ export const store = new vuex.Store({
           break;
       }
     },
-    projectChoice({commit, dispatch}, choice) {
+    projectChoice({ commit, dispatch }, choice) {
       commit("setProjectChoice", choice);
     },
     menuReset({ commit, dispatch }) {
       commit("setMenuOptions", this.state.standardMenuOptions);
+    },
+    activeClick({ commit, dispatch }, choice) {
+      // let userChoice = {
+      //   choice: choice
+      // };
+
+      commit("setBeenClicked", true);
+      commit("setMenuChoice", choice);
+      dispatch("menuChoice");
+      dispatch("menuTitleShow");
+      dispatch("vhCreator");
+      commit("setIsActive", true);
+      commit("setMenuTitleActive", true);
+      commit("setSinglePageView", false);
+
+      // this.$store.state.beenClicked = true;
+      // this.$store.dispatch("menuChoice", choice);
+      // this.menuTitleShow(choice);
+      // this.vhCreator(this.menuOptions);
+      // this.$store.state.isActive = true;
+      // this.$store.state.menuTitleActive = true;
+      // this.$store.state.singlePageView = false;
+    },
+    vhCreator() {
+      let projects = this.state.menuOptions;
+
+      for (var i = 1; i < projects.length; i++) {
+        if (i <= 0) {
+          this.state.menuOptions[i]["top"] = 10 + "vh";
+        } else {
+          this.state.menuOptions[i]["top"] = i * 40 + "vh";
+        }
+      }
+    },
+    menuTitleShow() {
+      let arr = this.state.menuTitles;
+      for (var i = 0; i < arr.length; i++) {
+        var obj = arr[i];
+        if (obj.title !== this.state.menuChoice) {
+          obj.show = false;
+        }
+      }
     }
   },
   methods: {}

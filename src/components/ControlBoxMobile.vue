@@ -58,6 +58,9 @@
     methods: {
       menuReset() {
         this.$store.dispatch("menuReset");
+      },
+      activeClick() {
+        this.$store.dispatch("activeClick", choice, this.menuOptions);
       }
     },
     computed: {

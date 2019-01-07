@@ -53,24 +53,27 @@
     },
     methods: {
       activeClick(choice) {
-        this.$store.state.beenClicked = true;
-        this.$store.dispatch("menuChoice", choice);
-        this.menuTitleShow(choice);
-        this.vhCreator(this.menuOptions);
-        this.$store.state.isActive = true;
-        this.$store.state.menuTitleActive = true;
-        this.$store.state.singlePageView = false;
+
+        this.$store.dispatch("activeClick", choice);
+
+        // this.$store.state.beenClicked = true;
+        // this.$store.dispatch("menuChoice", choice);
+        // this.menuTitleShow(choice);
+        // this.vhCreator(this.menuOptions);
+        // this.$store.state.isActive = true;
+        // this.$store.state.menuTitleActive = true;
+        // this.$store.state.singlePageView = false;
       },
-      vhCreator(projects) {
-        for (var i = 1; i < projects.length; i++) {
-          var project = {};
-          if (i <= 0) {
-            this.$store.state.menuOptions[i]["top"] = 10 + "vh";
-          } else {
-            this.$store.state.menuOptions[i]["top"] = i * 40 + "vh";
-          }
-        }
-      },
+      // vhCreator(projects) {
+      //   for (var i = 1; i < projects.length; i++) {
+      //     var project = {};
+      //     if (i <= 0) {
+      //       this.$store.state.menuOptions[i]["top"] = 10 + "vh";
+      //     } else {
+      //       this.$store.state.menuOptions[i]["top"] = i * 40 + "vh";
+      //     }
+      //   }
+      // },
       openProject(choice) {
         this.$store.state.typedUrl = "";
         let results = this.menuOptions.filter(function(project) {
@@ -81,15 +84,15 @@
         this.typedCount = 0;
         this.typeWriter();
       },
-      menuTitleShow(choice) {
-        let arr = this.$store.state.menuTitles;
-        for (var i = 0; i < arr.length; i++) {
-          var obj = arr[i];
-          if (obj.title !== choice) {
-            obj.show = false;
-          }
-        }
-      },
+      // menuTitleShow(choice) {
+      //   let arr = this.$store.state.menuTitles;
+      //   for (var i = 0; i < arr.length; i++) {
+      //     var obj = arr[i];
+      //     if (obj.title !== choice) {
+      //       obj.show = false;
+      //     }
+      //   }
+      // },
       typeWriter() {
         let speed = 50;
         let url = this.$store.state.projectAttributes[0]["demoLink"];
