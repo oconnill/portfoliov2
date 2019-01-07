@@ -1,36 +1,43 @@
 <template>
-  <div v-bind:class="{ active: isActive }" class="control-box">
-    <div class="control-header">
-      <div class="logo-font">Daniel O'Connell</div>
-      <div class="logo-icon" @click="menuReset()">
-          <div class="do-logo">
-                <div class="do-logo-d"></div>
-                <div class="do-logo-o"></div>
+  <div>
+      <div v-bind:class="{ active: isActive }" class="control-box">
+          <div class="control-header">
+            <div class="logo-font">Daniel O'Connell</div>
+            <div class="logo-icon" @click="menuReset()">
+                <div class="do-logo">
+                      <div class="do-logo-d"></div>
+                      <div class="do-logo-o"></div>
+                </div>
+            </div>
           </div>
-      </div>
-    </div>
-    <ControlBoxBody></ControlBoxBody>
-    <div class="control-footer">
-      <a href="https://www.linkedin.com/in/danieloconne11/" target="_blank"
-        ><i class="fab fa-linkedin-in"></i
-      ></a>
-      <a href="https://github.com/oconnill" target="_blank"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a href="" target="_blank"><i class="far fa-envelope"></i></a>
-    </div>
+          <ControlBoxBody></ControlBoxBody>
+          <div class="control-footer">
+            <a href="https://www.linkedin.com/in/danieloconne11/" target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="https://github.com/oconnill" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="" target="_blank"><i class="far fa-envelope"></i></a>
+          </div>
+        </div>
+
+          <ControlBoxMobile></ControlBoxMobile>     
   </div>
+  
 </template>
 
 <script>
   import ControlBoxBody from "./ControlBoxBody.vue";
+  import ControlBoxMobile from "./ControlBoxMobile.vue"
 
   import "../../public/controlBox.scss";
 
   export default {
     name: "app",
     components: {
-      ControlBoxBody
+      ControlBoxBody,
+      ControlBoxMobile
     },
     methods: {
       menuReset() {

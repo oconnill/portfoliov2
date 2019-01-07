@@ -10,14 +10,6 @@
   border: 1px black solid;
   transition: 2s;
 
-  .control-header {
-    display: flex;
-    padding: 5px;
-    background: none;
-    border-bottom: 1px black solid;
-    justify-content: space-between;
-  }
-
   .control-footer {
     display: flex;
     justify-content: flex-end;
@@ -33,6 +25,18 @@
       color: black;
     }
   }
+}
+
+.control-header {
+  display: flex;
+  padding: 5px;
+  background: none;
+  border-bottom: 1px black solid;
+  justify-content: space-between;
+}
+
+.control-box-mobile {
+  display: none;
 }
 
 .control-box.active {
@@ -75,4 +79,14 @@
   }
 }
 
+@media (max-width: 768px) {
+  .control-box-mobile {
+    display: block;
 
+    top: 0;
+    width: 100%;
+    border-bottom: 1px black solid;
+    padding-left: 0 !important;
+    overflow: hidden;
+  }
+}
