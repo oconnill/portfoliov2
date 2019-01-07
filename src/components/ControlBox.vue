@@ -22,7 +22,7 @@
           </div>
         </div>
 
-        //Set up props to pass computed functions from this to controlbox mobile?
+        <!-- Set up props to pass computed functions from this to controlbox mobile? -->
           <ControlBoxMobile v-on:reset="menuReset()"></ControlBoxMobile>     
   </div>
   
