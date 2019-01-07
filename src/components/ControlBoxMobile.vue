@@ -3,7 +3,7 @@
     <div class="control-box-mobile sticky-top">
       <div class="control-header">
         <div class="logo-font">Daniel O'Connell</div>
-        <div class="logo-icon" @click="menuReset()">
+        <div class="logo-icon" @click="$emit('reset')">
           <div class="do-logo">
             <div class="do-logo-d"></div>
             <div class="do-logo-o"></div>
@@ -53,14 +53,27 @@
       ControlBoxBody
     },
     data() {
-      return {};
+      return {
+        typedCount: 0
+      };
     },
     methods: {
-      menuReset() {
-        this.$store.dispatch("menuReset");
+      activeClick(choice) {
+        this.$store.dispatch("activeClick", choice);
       },
-      activeClick() {
-        this.$store.dispatch("activeClick", choice, this.menuOptions);
+      openProject(choice) {
+        this.$store.dispatch("openProject", choice);
+        this.typedCount = 0;
+        this.typeWriter();
+      },
+      typeWriter() {
+        let speed = 50;
+        let url = this.$store.state.projectAttributes[0]["demoLink"];
+        if (this.typedCount < url.length) {
+          this.$store.state.typedUrl += url.charAt(this.typedCount);
+          this.typedCount++;
+          setTimeout(this.typeWriter, speed);
+        }
       }
     },
     computed: {

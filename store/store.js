@@ -8,6 +8,7 @@ export const store = new vuex.Store({
   state: {
     menuOptions: [],
     projectAttributes: [],
+    typedCount: 0,
     isActive: false,
     menuTitleActive: false,
     beenClicked: false,
@@ -138,14 +139,33 @@ export const store = new vuex.Store({
     projectChoice({ commit, dispatch }, choice) {
       commit("setProjectChoice", choice);
     },
+    openProject({ commit, dispatch }, choice) {
+      this.state.typedUrl = "";
+
+      let results = this.state.menuOptions.filter(function(project) {
+        return project.name == choice;
+      });
+
+      commit("setProjectChoice", results);
+      this.state.singlePageView = true;
+      // dispatch("typeWriter")
+    },
+    // typeWriter() {
+    //   let speed = 50;
+    //   let count = this.state.typedCount;
+    //   let url = this.state.projectAttributes[0]["demoLink"];
+
+    //   if (count < url.length) {
+    //     this.state.typedUrl += url.charAt(count);
+    //     count++;
+    //     setTimeout(this.typeWriter, speed);
+    //   }
+    //   console.log(count)
+    // },
     menuReset({ commit, dispatch }) {
       commit("setMenuOptions", this.state.standardMenuOptions);
     },
     activeClick({ commit, dispatch }, choice) {
-      // let userChoice = {
-      //   choice: choice
-      // };
-
       commit("setBeenClicked", true);
       commit("setMenuChoice", choice);
       dispatch("menuChoice");
@@ -154,14 +174,6 @@ export const store = new vuex.Store({
       commit("setIsActive", true);
       commit("setMenuTitleActive", true);
       commit("setSinglePageView", false);
-
-      // this.$store.state.beenClicked = true;
-      // this.$store.dispatch("menuChoice", choice);
-      // this.menuTitleShow(choice);
-      // this.vhCreator(this.menuOptions);
-      // this.$store.state.isActive = true;
-      // this.$store.state.menuTitleActive = true;
-      // this.$store.state.singlePageView = false;
     },
     vhCreator() {
       let projects = this.state.menuOptions;

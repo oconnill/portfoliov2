@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mobile-reverse">
     <div>
       <div class="back-grid row" v-show="!singlePageView">
         <div class="col-3"></div>
@@ -14,9 +14,9 @@
       </div>
 
       <div class="row" v-show="singlePageView">
-        <div class="col-2 red"></div>
+        <div class="col-4 red"></div>
 
-        <!-- <div class="col-9 green" v-for="projectAttribute in projectAttributes">
+        <div class="col-8 green" v-for="projectAttribute in projectAttributes">
           <div class="project-title">
             <h2>{{ projectAttribute.name }}</h2>
           </div>
@@ -30,13 +30,13 @@
           <div class="project-text-block">
             {{ projectAttribute.description }}
           </div>
-        </div> -->
+        </div>
         <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
-        <div class="col-10 green">
+        <!-- <div class="col-10 green">
           <div class="mock-up-frame">
             <img src="@/assets/images/blacklineproductions_big_logo.png" alt="/src/assets/images/blacklineproductions_big_logo.png">
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <ControlBox></ControlBox>
