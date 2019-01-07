@@ -1,6 +1,8 @@
 <template>
   <div>
+
     <div class="control-box-mobile sticky-top">
+
       <div class="control-header">
         <div class="logo-font">Daniel O'Connell</div>
         <div class="logo-icon" @click="$emit('reset')">
@@ -10,9 +12,9 @@
           </div>
         </div>
       </div>
-      <div class="">
+     
         <div
-          class="control-box-title"
+          class="mobile-menu-option-title"
           v-bind:class="{ active: menuTitleActive }"
         >
           <h3
@@ -24,6 +26,7 @@
             {{ menuTitle.title }}
           </h3>
         </div>
+
         <div v-show="beenClicked">
           <div class="control-box-body">
             <ul>
@@ -36,8 +39,9 @@
             </ul>
           </div>
         </div>
-      </div>
+
     </div>
+
   </div>
 </template>
 

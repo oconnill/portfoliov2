@@ -27,6 +27,16 @@
   }
 }
 
+.mobile-menu-option-title{
+  float: right;
+  padding-right: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: right;
+  transition: 6s
+}
+
+
 .control-header {
   display: flex;
   padding: 5px;
@@ -82,7 +92,6 @@
 @media (max-width: 768px) {
   .control-box-mobile {
     display: block;
-
     top: 0;
     width: 100%;
     border-bottom: 1px black solid;
