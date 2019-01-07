@@ -16,7 +16,7 @@
       <div class="row" v-show="singlePageView">
         <div class="col-4 red"></div>
 
-        <div class="col-8 green" v-for="projectAttribute in projectAttributes">
+        <div class="col-12 col-lg-8 green" v-for="projectAttribute in projectAttributes">
           <div class="project-title">
             <h2>{{ projectAttribute.name }}</h2>
           </div>
