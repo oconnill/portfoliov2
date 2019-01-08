@@ -35,7 +35,8 @@ export const store = new vuex.Store({
         description:
           "Built with a development team, a form for brochure sign-up.  All entries could be exported by admin to a .csv file type. Laravel, Javascript, and WordPress were used in the development.",
         demoLink: "https://rvidaho.org/free-camping-guide/",
-        type: "browser-mockup with-url"
+        type: "browser-mockup with-url",
+        outlined: false
       },
       {
         name: "Brundage",
@@ -43,7 +44,8 @@ export const store = new vuex.Store({
         description:
           "Updated homepage weather widget and worked to bring in a graph displaying snow data for base and summit depth",
         demoLink: "https://brundage.com/",
-        type: "browser-mockup with-url"
+        type: "browser-mockup with-url",
+        outlined: false
       },
       {
         name: "Kanban",
@@ -52,7 +54,8 @@ export const store = new vuex.Store({
           "Organize work flow with custom boards, lists, tasks, and notes",
         demoLink: "https://kanban-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-kanban",
-        type: "browser-mockup with-url"
+        type: "browser-mockup with-url",
+        outlined: false
       },
       {
         name: "Music Selector",
@@ -60,7 +63,8 @@ export const store = new vuex.Store({
         description: "Build a playlist of songs from the I Tunes API",
         demoLink: "https://vue-music-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
-        type: "browser-mockup with-url"
+        type: "browser-mockup with-url",
+        outlined: false
       },
       {
         name: "Univ-Rss",
@@ -69,7 +73,8 @@ export const store = new vuex.Store({
           "Personal dashboard for weather, rss feeds, local events, todo lists, photos, and spotify",
         demoLink: "",
         gitHubLink: "https://github.com/oconnill/Univ-Rss",
-        type: "browser-mockup with-url"
+        type: "browser-mockup with-url",
+        outlined: false
       }
     ],
     designOptions: [
@@ -79,7 +84,8 @@ export const store = new vuex.Store({
         description:
           "Personal dashboard for weather, rss feeds, local events, todo lists, photos, and spotify",
         demoLink: "",
-        gitHubLink: "https://github.com/oconnill/Univ-Rss"
+        gitHubLink: "https://github.com/oconnill/Univ-Rss",
+        outlined: false
       }
     ],
     photographyOptions: [
@@ -89,7 +95,8 @@ export const store = new vuex.Store({
         description:
           "Personal dashboard for weather, rss feeds, local events, todo lists, photos, and spotify",
         demoLink: "",
-        gitHubLink: "https://github.com/oconnill/Univ-Rss"
+        gitHubLink: "https://github.com/oconnill/Univ-Rss",
+        outlined: false
       }
     ]
   },

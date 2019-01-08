@@ -46,16 +46,10 @@
 </template>
 
 <script>
-  import ControlBox from "./ControlBox.vue";
-  import ControlBoxBody from "./ControlBoxBody.vue";
   import "../../public/controlBox.scss";
 
   export default {
     name: "app",
-    components: {
-      ControlBox,
-      ControlBoxBody
-    },
     data() {
       return {
         typedCount: 0

@@ -6,8 +6,10 @@
         <div
           class="backgroundGridImage col-3"
           v-if="menuOptions.length > 3"
-          v-for="menuOption in menuOptions"
+          v-for="(menuOption, index) in menuOptions"
           v-bind:style="{ top: menuOption.top }"
+          v-bind:class="{outlined: menuOption.outlined}"
+          :load="sequenceGenerator()"
         >
           {{ menuOption.name }}
         </div>
@@ -16,7 +18,10 @@
       <div class="row" v-show="singlePageView">
         <div class="col-4 red"></div>
 
-        <div class="col-12 col-lg-8 green" v-for="projectAttribute in projectAttributes">
+        <div
+          class="col-12 col-lg-8 green"
+          v-for="projectAttribute in projectAttributes"
+        >
           <div class="project-title">
             <h2>{{ projectAttribute.name }}</h2>
           </div>
@@ -53,11 +58,39 @@
       ControlBox
     },
     data() {
-      return {};
+      return {
+        sequence: [],
+        sequenceLimit: 4
+      };
     },
     methods: {
+      // log() {
+      //   setInterval(setOutline, 3000);
+      //   debugger;
+
+      //   function setOutline(i) {
+      //     debugger;
+      //     this.$store.state.menuOptions[i].outlined = true ? false : true;
+      //   }
+
+      //   // let choice = Math.floor(Math.random() * this.menuOptions.length);
+
+      //   for (var i = 0; i < this.menuOptions.length; i++) {
+      //     // let outlinedChoice = this.menuOptions[i];
+      //     setOutline(i);
+      //   }
+      // },
       menuReset() {
         this.$store.dispatch("menuReset");
+      },
+      sequenceGenerator() {
+        while (this.sequenceLimit >= 0) {
+          let n = Math.floor(Math.random() * this.menuOptions.length);
+          this.sequence.push(n)
+          this.sequenceLimit--
+        }
+        //// run a loop that choses these indexes and than outlines them with an interval to call it again with a fresh sequence
+
       }
     },
     computed: {
