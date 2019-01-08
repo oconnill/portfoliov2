@@ -79,13 +79,18 @@ export const store = new vuex.Store({
     ],
     designOptions: [
       {
-        name: "Yearly Poster Project 1986 - 1994",
+        name: "Chicago Beers - Illustration Identity",
         // image: require('../assets/univrss-hover.png'),
         description:
-          "Personal dashboard for weather, rss feeds, local events, todo lists, photos, and spotify",
+          "Identity and Branding for use on cocktail menu. Local 22 Chicago",
         demoLink: "",
         gitHubLink: "https://github.com/oconnill/Univ-Rss",
-        outlined: false
+        outlined: false,
+        images: {
+          featured_image: "images/chicagobeersbadgehelmet.png",
+          image: "images/chicagobeerslargetitle.png",
+          image: "images/chicagobeersicons.png",          
+        }
       }
     ],
     photographyOptions: [
@@ -93,7 +98,7 @@ export const store = new vuex.Store({
         name: "Dublin Summer 1990",
         // image: require('../assets/univrss-hover.png'),
         description:
-          "Personal dashboard for weather, rss feeds, local events, todo lists, photos, and spotify",
+          "Identity and Branding for use on cocktail menu. Local 22 Chicago",
         demoLink: "",
         gitHubLink: "https://github.com/oconnill/Univ-Rss",
         outlined: false

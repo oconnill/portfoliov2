@@ -20,7 +20,7 @@
 
         <div
           class="col-12 col-lg-8 green"
-          v-for="projectAttribute in projectAttributes"
+          v-for="(projectAttribute, index) in projectAttributes"
         >
           <div class="project-title">
             <h2>{{ projectAttribute.name }}</h2>
@@ -28,13 +28,20 @@
           <div v-bind:class="projectAttribute.type">
             <div class="browser-input">{{ typedUrl }}</div>
             <div class="mock-up-frame">
-              <img src="https://picsum.photos/1240/790/?random" />
+              <img
+                :src="getImgUrl(projectAttribute.images.featured_image)"
+                v-bind:alt="projectAttribute.images.featured_image"
+              />
             </div>
           </div>
 
           <div class="project-text-block">
             {{ projectAttribute.description }}
           </div>
+        </div>
+
+        <div v-for="(projectAttribute, index) in projectAttributes"  class="col-12">
+          <img v-for="image in projectAttribute.images" :src="getImgUrl(image)" alt=""/>
         </div>
         <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
         <!-- <div class="col-10 green">
@@ -80,17 +87,19 @@
       //     setOutline(i);
       //   }
       // },
+      getImgUrl(imgUrl) {
+        return require("../assets/" + imgUrl);
+      },
       menuReset() {
         this.$store.dispatch("menuReset");
       },
       sequenceGenerator() {
         while (this.sequenceLimit >= 0) {
           let n = Math.floor(Math.random() * this.menuOptions.length);
-          this.sequence.push(n)
-          this.sequenceLimit--
+          this.sequence.push(n);
+          this.sequenceLimit--;
         }
         //// run a loop that choses these indexes and than outlines them with an interval to call it again with a fresh sequence
-
       }
     },
     computed: {
