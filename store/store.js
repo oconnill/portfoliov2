@@ -62,7 +62,7 @@ export const store = new vuex.Store({
       {
         name: "Music Selector",
         // image: require('../assets/music-selector-hover.png'),
-        description: "Build a playlist of songs from the I Tunes API",
+        description: "Using the frontend framework Vue Js with Mongo DB and NodeJs to access the API of Apple I Tunes",
         demoLink: "https://vue-music-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
         type: "browser-mockup with-url",
