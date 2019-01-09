@@ -33,6 +33,10 @@
               <div v-if="key == 'featured_image'">
                 <img :src="getImgUrl(image)" v-bind:alt="image" />
               </div>
+              <div v-if="key == 'movie1'">
+                <!-- need a poster image -->
+                <video :src="getImgUrl(image)" poster="nice-default.jpg" autoplay loop></video>
+              </div>
             </div>
           </div>
 
@@ -42,18 +46,16 @@
         </div>
         <div class="col-1 red"></div>
 
-      
-
-      <div class="row">
-        <div v-for="projectAttribute in projectAttributes" class="col-12">
-          <div class="" v-for="(image, key) in projectAttribute.images">
-            <div class="comp-image-frame" v-if="key !== 'featured_image'">
+        <div class="row">
+          <div v-for="projectAttribute in projectAttributes" class="col-12">
+            <div class="" v-for="(image, key) in projectAttribute.images">
+              <div class="comp-image-frame" v-if="key !== 'featured_image'">
                 <img class="complementary-img" :src="getImgUrl(image)" alt="" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
       <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
       <!-- <div class="col-10 green">

@@ -32,16 +32,19 @@ export const store = new vuex.Store({
         name: "RV Idaho",
         // image: require('../assets/rvidaho_hover.png'),
         description:
-          "Built with a development team, a form for brochure sign-up.  All entries could be exported by admin to a .csv file type. Laravel, Javascript, and WordPress were used in the development.",
+          "Worked with a team of developers on a site redesign of RVIdaho.org. My focus was updating a brochure sign-up form that gave users different options of mailed material to receive. The form also allowed for all the data to be exported by RV Idaho as a .csv using a custom date range. The forms were built with Laravel and Javascript.",
         demoLink: "https://rvidaho.org/free-camping-guide/",
         type: "browser-mockup with-url",
+        images: {
+          movie1: "images/rvidahodemoreelcompressed.mp4"
+        },
         outlined: false
       },
       {
         name: "Brundage",
         // image: require('../assets/brundage_hover.png'),
         description:
-          "Updated homepage weather widget and worked to bring in a graph displaying snow data for base and summit depth",
+          "Updated Brundage’s weather widget and snow report. Using Laravel, Javascript and WordPress to create mobile responsive snow depth graph that displays current weather conditions and snow report. Added additional data to display on a homepage weather widget that can be controlled by the WordPress administrator.",
         demoLink: "https://brundage.com/",
         type: "browser-mockup with-url",
         outlined: false
