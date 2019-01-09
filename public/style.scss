@@ -16,3 +16,14 @@ ul {
 .container {
     padding-top: 15px;
 }
+
+a {
+    color: rgb(175, 170, 170);
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+        color: black;
+    }
+}
+
