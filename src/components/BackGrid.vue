@@ -17,21 +17,22 @@
 
       <div class="row" v-show="singlePageView">
         <div class="col-4 red"></div>
-
         <div
           class="col-12 col-lg-8 green"
-          v-for="(projectAttribute, index) in projectAttributes"
+          v-for="projectAttribute in projectAttributes"
         >
           <div class="project-title">
             <h2>{{ projectAttribute.name }}</h2>
           </div>
           <div v-bind:class="projectAttribute.type">
             <div class="browser-input">{{ typedUrl }}</div>
-            <div class="mock-up-frame">
-              <img
-                :src="getImgUrl(projectAttribute.images.featured_image)"
-                v-bind:alt="projectAttribute.images.featured_image"
-              />
+            <div
+              class="mock-up-frame"
+              v-for="(image, key) in projectAttribute.images"
+            >
+              <div v-if="key == 'featured_image'">
+                <img :src="getImgUrl(image)" v-bind:alt="image" />
+              </div>
             </div>
           </div>
 
@@ -39,17 +40,25 @@
             {{ projectAttribute.description }}
           </div>
         </div>
+      
 
-        <div v-for="(projectAttribute, index) in projectAttributes"  class="col-12">
-          <img v-for="image in projectAttribute.images" :src="getImgUrl(image)" alt=""/>
+      <div class="row">
+        <div v-for="projectAttribute in projectAttributes" class="col-12">
+          <div class="" v-for="(image, key) in projectAttribute.images">
+            <div v-if="key !== 'featured_image'">
+                <img class="complementary-img" :src="getImgUrl(image)" alt="" />
+            </div>
+          </div>
         </div>
-        <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
-        <!-- <div class="col-10 green">
+      </div>
+    </div>
+
+      <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
+      <!-- <div class="col-10 green">
           <div class="mock-up-frame">
             <img src="@/assets/images/blacklineproductions_big_logo.png" alt="/src/assets/images/blacklineproductions_big_logo.png">
           </div>
         </div> -->
-      </div>
     </div>
     <ControlBox></ControlBox>
   </div>

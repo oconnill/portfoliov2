@@ -1,6 +1,5 @@
 import vue from "vue";
 import vuex from "vuex";
-import { debug } from "util";
 
 vue.use(vuex);
 
@@ -88,8 +87,8 @@ export const store = new vuex.Store({
         outlined: false,
         images: {
           featured_image: "images/chicagobeersbadgehelmet.png",
-          image: "images/chicagobeerslargetitle.png",
-          image: "images/chicagobeersicons.png",          
+          img1: "images/chicagobeerslargetitle.png",
+          img2: "images/chicagobeersicons.png"
         }
       }
     ],
@@ -133,7 +132,7 @@ export const store = new vuex.Store({
     }
   },
   actions: {
-    menuChoice({ commit, dispatch }) {
+    menuChoice({ commit }) {
       let choice = this.state.menuChoice;
 
       switch (choice) {
@@ -148,10 +147,10 @@ export const store = new vuex.Store({
           break;
       }
     },
-    projectChoice({ commit, dispatch }, choice) {
+    projectChoice({ commit }, choice) {
       commit("setProjectChoice", choice);
     },
-    openProject({ commit, dispatch }, choice) {
+    openProject({ commit }, choice) {
       this.state.typedUrl = "";
 
       let results = this.state.menuOptions.filter(function(project) {
@@ -174,7 +173,7 @@ export const store = new vuex.Store({
     //   }
     //   console.log(count)
     // },
-    menuReset({ commit, dispatch }) {
+    menuReset({ commit }) {
       commit("setMenuOptions", this.state.standardMenuOptions);
     },
     activeClick({ commit, dispatch }, choice) {
