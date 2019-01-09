@@ -16,7 +16,7 @@
       </div>
 
       <div class="row" v-show="singlePageView">
-        <div class="col-4 red"></div>
+        <div class="col-3 red"></div>
         <div
           class="col-12 col-lg-8 green"
           v-for="projectAttribute in projectAttributes"
@@ -40,12 +40,14 @@
             {{ projectAttribute.description }}
           </div>
         </div>
+        <div class="col-1 red"></div>
+
       
 
       <div class="row">
         <div v-for="projectAttribute in projectAttributes" class="col-12">
           <div class="" v-for="(image, key) in projectAttribute.images">
-            <div v-if="key !== 'featured_image'">
+            <div class="comp-image-frame" v-if="key !== 'featured_image'">
                 <img class="complementary-img" :src="getImgUrl(image)" alt="" />
             </div>
           </div>

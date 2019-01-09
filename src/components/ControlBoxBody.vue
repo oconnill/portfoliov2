@@ -17,7 +17,7 @@
             v-for="menuOption in menuOptions"
             @click="openProject(menuOption.name)"
           >
-            <h3>{{ menuOption.name }}</h3>
+            <h3><a href="#">{{ menuOption.name }}</a></h3>
           </li>
         </ul>
       </div>

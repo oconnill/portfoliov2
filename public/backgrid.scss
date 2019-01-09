@@ -30,6 +30,12 @@
 
 .green {
   width: 100%;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.comp-image-frame {
+  padding-bottom: 200px;
 }
 
 .mock-up-frame {
@@ -45,10 +51,12 @@
   max-width: 500px;
   line-height: 1.5;
   margin: auto;
+  padding: 40px
 }
 
 .project-title {
   text-align: center;
+  padding:40px
 }
 
 .browser-mockup {
