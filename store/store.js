@@ -72,7 +72,7 @@ export const store = new vuex.Store({
         name: "Univ-Rss",
         // image: require('../assets/univrss-hover.png'),
         description:
-          "Personal dashboard for weather, rss feeds, local events, todo lists, photos, and spotify",
+          "Univ-Rss What drives you daily? How do you want to fill up your space? Whats in your daily orbit? You need to customize your Univ-rss. Using Vue Js, Node js, Mongo Db, Eventful Api, the power of Google Oauth, and Spotify to create the ultimate custom dashboard. With drag and scale functionality.",
         demoLink: "",
         gitHubLink: "https://github.com/oconnill/Univ-Rss",
         type: "browser-mockup with-url",
