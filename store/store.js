@@ -63,6 +63,7 @@ export const store = new vuex.Store({
         images: {
           movie1: "images/kanbandemoreel.mp4"
         },
+        skills: ["vue", "nodejs", "html5"],
         outlined: false
       },
       {
@@ -73,6 +74,7 @@ export const store = new vuex.Store({
         demoLink: "https://vue-music-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
         type: "browser-mockup with-url",
+        skills: ["vue", "nodejs", "html5"],
         outlined: false
       },
       {
@@ -83,6 +85,7 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "https://github.com/oconnill/Univ-Rss",
         type: "browser-mockup with-url",
+        skills: ["vue", "nodejs", "html5"],
         outlined: false
       }
     ],
