@@ -40,7 +40,7 @@ export const store = new vuex.Store({
         images: {
           movie1: "images/rvidahodemoreelcompressed.mp4"
         },
-        skills: ["vue", "laravel", "mysql", "wordpress"],
+        skills: ["vue", "laravel", "mysql", "wordpress", "sass"],
         outlined: false
       },
       {

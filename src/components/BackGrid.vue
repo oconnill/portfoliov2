@@ -100,12 +100,13 @@
         sequence: [],
         sequenceLimit: 4,
         skillImages: {
+          mysql: "software_icons/logo-mysql-170x115.png",
           vue: "software_icons/Vue.js_Logo.svg",
           wordpress: "software_icons/WordPress-logotype-alternative.png",
           html5: "software_icons/HTML5_Logo.svg",
           laravel: "software_icons/laravellogo.svg",
-          mysql: "software_icons/logo-mysql-170x115.png",
-          nodejs: "software_icons/nodejs.png"
+          nodejs: "software_icons/nodejs.png",
+          sass: "software_icons/sasslogo.png"
         }
       };
     },
