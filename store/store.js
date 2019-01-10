@@ -50,13 +50,16 @@ export const store = new vuex.Store({
         outlined: false
       },
       {
-        name: "Kanban",
+        name: "KANBAN",
         // image: require('../assets/kanban-hover.png'),
         description:
-          "Organize work flow with custom boards, lists, tasks, and notes",
+          "Organize work flow with custom boards, lists, tasks, and notes. Whether it’s for work, a side project or even the next family vacation, KANBAN helps your team stay organized.",
         demoLink: "https://kanban-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-kanban",
         type: "browser-mockup with-url",
+        images: {
+          movie1: "images/kanbandemoreel.mp4"
+        },
         outlined: false
       },
       {
