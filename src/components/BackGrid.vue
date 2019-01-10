@@ -50,6 +50,7 @@
           </div>
         </div>
         <div class="col-1 red"></div>
+      </div>
 
         <div class="row">
           <div v-for="projectAttribute in projectAttributes" class="col-12">
@@ -61,7 +62,7 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row icon-box">
           <div class="" v-for="projectAttribute in projectAttributes">
             <div class="software-icon">
               <div class="outter-icon" v-for="icon in filtered">
@@ -72,7 +73,7 @@
             </div>
           </div>
         </div>
-      </div>
+      
 
       <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
       <!-- <div class="col-10 green">

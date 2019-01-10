@@ -18,9 +18,12 @@ video {
   top: 40vh;
 }
 
-.outter-icon {
-width: 240px;
-height: 240px;
+.software-icon {
+  display: flex;
+}
+
+.icon-box {
+  justify-content: center;
 }
 
 .inner-icon img {
