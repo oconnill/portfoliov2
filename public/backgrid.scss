@@ -18,6 +18,16 @@ video {
   top: 40vh;
 }
 
+.outter-icon {
+width: 240px;
+height: 240px;
+}
+
+.inner-icon img {
+object-fit: contain;
+height: 65px;
+}
+
 .outlined {
   border:solid black 1px;
   padding: 10px;

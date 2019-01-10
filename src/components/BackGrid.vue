@@ -35,11 +35,16 @@
               </div>
               <div v-if="key == 'movie1'">
                 <!-- need a poster image -->
-                <video :src="getImgUrl(image)" poster="nice-default.jpg" autoplay loop></video>
+                <video
+                  :src="getImgUrl(image)"
+                  poster="nice-default.jpg"
+                  autoplay
+                  loop
+                ></video>
               </div>
             </div>
           </div>
-<!-- demo link by using key value and value for url -->
+          <!-- demo link by using key value and value for url -->
           <div class="project-text-block">
             {{ projectAttribute.description }}
           </div>
@@ -51,6 +56,18 @@
             <div class="" v-for="(image, key) in projectAttribute.images">
               <div class="comp-image-frame" v-if="key !== 'featured_image'">
                 <img class="complementary-img" :src="getImgUrl(image)" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="" v-for="projectAttribute in projectAttributes">
+            <div class="software-icon">
+              <div class="outter-icon" v-for="icon in filtered">
+                <div class="inner-icon">
+                    <img :src="getImgUrl(icon)" alt="" />
+                </div>
               </div>
             </div>
           </div>
@@ -80,7 +97,15 @@
     data() {
       return {
         sequence: [],
-        sequenceLimit: 4
+        sequenceLimit: 4,
+        skillImages: {
+          vue: "software_icons/Vue.js_Logo.svg",
+          wordpress: "software_icons/WordPress-logotype-alternative.png",
+          html5: "software_icons/HTML5_Logo.svg",
+          laravel: "software_icons/laravellogo.svg",
+          mysql: "software_icons/logo-mysql-170x115.png",
+          nodejs: "software_icons/nodejs.png"
+        }
       };
     },
     methods: {
@@ -100,6 +125,16 @@
       //     setOutline(i);
       //   }
       // },
+      getSkills(skillsArray) {
+        let allowed = skillsArray;
+
+        this.filtered = Object.keys(this.skillImages)
+          .filter(key => allowed.includes(key))
+          .reduce((obj, key) => {
+            obj[key] = this.skillImages[key];
+            return obj;
+          }, {});
+      },
       getImgUrl(imgUrl) {
         return require("../assets/" + imgUrl);
       },
@@ -118,6 +153,18 @@
     computed: {
       menuOptions() {
         return this.$store.state.menuOptions;
+      },
+      filtered() {
+        let allowed = this.$store.state.projectAttributes[0].skills;
+
+        let filtered = Object.keys(this.skillImages)
+          .filter(key => allowed.includes(key))
+          .reduce((obj, key) => {
+            obj[key] = this.skillImages[key];
+            return obj;
+          }, {});
+
+        return filtered;
       },
       projectAttributes() {
         return this.$store.state.projectAttributes;

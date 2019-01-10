@@ -6,7 +6,9 @@ vue.use(vuex);
 export const store = new vuex.Store({
   state: {
     menuOptions: [],
-    projectAttributes: [],
+    projectAttributes: [{
+      skills:[]
+    }],
     typedCount: 0,
     isActive: false,
     menuTitleActive: false,
@@ -38,6 +40,7 @@ export const store = new vuex.Store({
         images: {
           movie1: "images/rvidahodemoreelcompressed.mp4"
         },
+        skills: ["vue", "laravel", "mysql", "wordpress"],
         outlined: false
       },
       {
@@ -65,7 +68,8 @@ export const store = new vuex.Store({
       {
         name: "Music Selector",
         // image: require('../assets/music-selector-hover.png'),
-        description: "Using the frontend framework Vue Js with Mongo DB and NodeJs to access the API of Apple I Tunes",
+        description:
+          "Using the frontend framework Vue Js with Mongo DB and NodeJs to access the API of Apple I Tunes",
         demoLink: "https://vue-music-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
         type: "browser-mockup with-url",
