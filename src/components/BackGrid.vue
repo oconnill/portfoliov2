@@ -15,75 +15,79 @@
         </div>
       </div>
 
-      <div class="row" v-show="singlePageView">
-        <div class="col-3 red"></div>
-        <div
-          class="col-12 col-lg-8 green"
-          v-for="projectAttribute in projectAttributes"
-        >
-          <div class="project-title">
-            <h2>{{ projectAttribute.name }}</h2>
-          </div>
-          <div v-bind:class="projectAttribute.type">
-            <div class="browser-input">{{ typedUrl }}</div>
-            <div
-              class="mock-up-frame"
-              v-for="(image, key) in projectAttribute.images"
-            >
-              <div v-if="key == 'featured_image'">
-                <img :src="getImgUrl(image)" v-bind:alt="image" />
+      <div v-show="singlePageView">
+        <div class="row">
+          <div class="col-3 red"></div>
+          <div
+            class="col-12 col-lg-8 green"
+            v-for="projectAttribute in projectAttributes"
+          >
+            <div class="project-title">
+              <h2>{{ projectAttribute.name }}</h2>
+            </div>
+            <div v-bind:class="projectAttribute.type">
+              <div class="browser-input">{{ typedUrl }}</div>
+              <div
+                class="mock-up-frame"
+                v-for="(image, key) in projectAttribute.images"
+              >
+                <div v-if="key == 'featured_image'">
+                  <img :src="getImgUrl(image)" v-bind:alt="image" />
+                </div>
+                <div v-if="key == 'movie1'">
+                  <!-- need a poster image -->
+                  <video
+                    :src="getImgUrl(image)"
+                    poster="nice-default.jpg"
+                    autoplay
+                    loop
+                  ></video>
+                </div>
               </div>
-              <div v-if="key == 'movie1'">
-                <!-- need a poster image -->
-                <video
-                  :src="getImgUrl(image)"
-                  poster="nice-default.jpg"
-                  autoplay
-                  loop
-                ></video>
+            </div>
+            <!-- demo link by using key value and value for url -->
+            <div class="project-text-block">
+              {{ projectAttribute.description }}
+            </div>
+          </div>
+          <div class="col-1 red"></div>
+        </div>
+
+        <div class="row">
+          <div v-for="projectAttribute in projectAttributes" class="col-12">
+            <div class="" v-for="(image, key) in projectAttribute.images">
+              <div class="comp-image-frame" v-if="key !== 'featured_image'">
+                <img class="complementary-img" :src="getImgUrl(image)" alt="" />
               </div>
             </div>
           </div>
-          <!-- demo link by using key value and value for url -->
-          <div class="project-text-block">
-            {{ projectAttribute.description }}
-          </div>
         </div>
-        <div class="col-1 red"></div>
-      </div>
 
-      <div class="row">
-        <div v-for="projectAttribute in projectAttributes" class="col-12">
-          <div class="" v-for="(image, key) in projectAttribute.images">
-            <div class="comp-image-frame" v-if="key !== 'featured_image'">
-              <img class="complementary-img" :src="getImgUrl(image)" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row icon-box">
-        <div class="col-3"></div>
-        <div class="col-12 col-lg-8 ">
-          <div class="" v-for="projectAttribute in projectAttributes">
-            <div class="software-icon">
-              <div class="outter-icon" v-for="icon in filtered">
-                <div class="inner-icon">
-                  <img :src="getImgUrl(icon)" alt="" />
+        <div class="row icon-box">
+          <div class="col-3"></div>
+          <div class="col-12 col-lg-8 ">
+            <div class="" v-for="projectAttribute in projectAttributes">
+              <div class="software-icon">
+                <div class="outter-icon" v-for="icon in filtered">
+                  <div class="inner-icon">
+                    <img :src="getImgUrl(icon)" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="col-1 red"></div>
         </div>
       </div>
+    </div>
 
-      <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
-      <!-- <div class="col-10 green">
+    <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
+    <!-- <div class="col-10 green">
           <div class="mock-up-frame">
             <img src="@/assets/images/blacklineproductions_big_logo.png" alt="/src/assets/images/blacklineproductions_big_logo.png">
           </div>
         </div> -->
-    </div>
+
     <ControlBox></ControlBox>
   </div>
 </template>
@@ -160,16 +164,18 @@
         return this.$store.state.menuOptions;
       },
       filtered() {
-        let allowed = this.$store.state.projectAttributes[0].skills;
+        if (this.$store.state.projectAttributes[0].skills) {
+          let allowed = this.$store.state.projectAttributes[0].skills;
 
-        let filtered = Object.keys(this.skillImages)
-          .filter(key => allowed.includes(key))
-          .reduce((obj, key) => {
-            obj[key] = this.skillImages[key];
-            return obj;
-          }, {});
+          let filtered = Object.keys(this.skillImages)
+            .filter(key => allowed.includes(key))
+            .reduce((obj, key) => {
+              obj[key] = this.skillImages[key];
+              return obj;
+            }, {});
 
-        return filtered;
+          return filtered;
+        }
       },
       projectAttributes() {
         return this.$store.state.projectAttributes;
