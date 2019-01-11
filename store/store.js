@@ -50,6 +50,7 @@ export const store = new vuex.Store({
           "Updated Brundage’s weather widget and snow report. Using Laravel, Javascript and WordPress to create mobile responsive snow depth graph that displays current weather conditions and snow report. Added additional data to display on a homepage weather widget that can be controlled by the WordPress administrator.",
         demoLink: "https://brundage.com/",
         type: "browser-mockup with-url",
+        skills: ["vue", "laravel", "mysql", "wordpress", "sass"],
         outlined: false
       },
       {
@@ -63,7 +64,7 @@ export const store = new vuex.Store({
         images: {
           movie1: "images/kanbandemoreel.mp4"
         },
-        skills: ["vue", "nodejs", "html5"],
+        skills: ["vue", "nodejs", "html5", "mongo"],
         outlined: false
       },
       {
@@ -74,7 +75,10 @@ export const store = new vuex.Store({
         demoLink: "https://vue-music-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
         type: "browser-mockup with-url",
-        skills: ["vue", "nodejs", "html5"],
+        images: {
+          movie1: "images/musicselector.mp4"
+        },
+        skills: ["vue", "nodejs", "html5", "mongo"],
         outlined: false
       },
       {
@@ -85,7 +89,7 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "https://github.com/oconnill/Univ-Rss",
         type: "browser-mockup with-url",
-        skills: ["vue", "nodejs", "html5"],
+        skills: ["vue", "nodejs", "html5", "mongo"],
         outlined: false
       }
     ],

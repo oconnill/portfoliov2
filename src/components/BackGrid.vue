@@ -52,28 +52,30 @@
         <div class="col-1 red"></div>
       </div>
 
-        <div class="row">
-          <div v-for="projectAttribute in projectAttributes" class="col-12">
-            <div class="" v-for="(image, key) in projectAttribute.images">
-              <div class="comp-image-frame" v-if="key !== 'featured_image'">
-                <img class="complementary-img" :src="getImgUrl(image)" alt="" />
-              </div>
+      <div class="row">
+        <div v-for="projectAttribute in projectAttributes" class="col-12">
+          <div class="" v-for="(image, key) in projectAttribute.images">
+            <div class="comp-image-frame" v-if="key !== 'featured_image'">
+              <img class="complementary-img" :src="getImgUrl(image)" alt="" />
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="row icon-box">
+      <div class="row icon-box">
+        <div class="col-3"></div>
+        <div class="col-12 col-lg-8 ">
           <div class="" v-for="projectAttribute in projectAttributes">
             <div class="software-icon">
               <div class="outter-icon" v-for="icon in filtered">
                 <div class="inner-icon">
-                    <img :src="getImgUrl(icon)" alt="" />
+                  <img :src="getImgUrl(icon)" alt="" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
+      </div>
 
       <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
       <!-- <div class="col-10 green">
@@ -106,7 +108,8 @@
           html5: "software_icons/HTML5_Logo.svg",
           laravel: "software_icons/laravellogo.svg",
           nodejs: "software_icons/nodejs.png",
-          sass: "software_icons/sasslogo.png"
+          sass: "software_icons/sasslogo.png",
+          mongo: "software_icons/MongoDB_Gray_Logo_FullColor_RGB-01.jpg"
         }
       };
     },
