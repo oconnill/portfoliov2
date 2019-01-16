@@ -9,7 +9,6 @@
           v-for="(menuOption, index) in menuOptions"
           v-bind:style="{ top: menuOption.top }"
           v-bind:class="{outlined: menuOption.outlined}"
-          :load="sequenceGenerator()"
         >
           {{ menuOption.name }}
         </div>
@@ -45,7 +44,6 @@
                 </div>
               </div>
             </div>
-            <!-- demo link by using key value and value for url -->
             <div class="project-text-block">
               {{ projectAttribute.description }}
             </div>
@@ -80,14 +78,6 @@
         </div>
       </div>
     </div>
-
-    <!-- alters display for full images mostly for design possible programatic way to do so with fewer lines -->
-    <!-- <div class="col-10 green">
-          <div class="mock-up-frame">
-            <img src="@/assets/images/blacklineproductions_big_logo.png" alt="/src/assets/images/blacklineproductions_big_logo.png">
-          </div>
-        </div> -->
-
     <ControlBox></ControlBox>
   </div>
 </template>
@@ -113,50 +103,18 @@
           laravel: "software_icons/laravellogo.svg",
           nodejs: "software_icons/nodejs.png",
           sass: "software_icons/sasslogo.png",
-          mongo: "software_icons/MongoDB_Gray_Logo_FullColor_RGB-01.jpg"
+          mongo: "software_icons/MongoDB_Gray_Logo_FullColor_RGB-01.jpg",
+          react: "",
+          javascript: ""
         }
       };
     },
     methods: {
-      // log() {
-      //   setInterval(setOutline, 3000);
-      //   debugger;
-
-      //   function setOutline(i) {
-      //     debugger;
-      //     this.$store.state.menuOptions[i].outlined = true ? false : true;
-      //   }
-
-      //   // let choice = Math.floor(Math.random() * this.menuOptions.length);
-
-      //   for (var i = 0; i < this.menuOptions.length; i++) {
-      //     // let outlinedChoice = this.menuOptions[i];
-      //     setOutline(i);
-      //   }
-      // },
-      getSkills(skillsArray) {
-        let allowed = skillsArray;
-
-        this.filtered = Object.keys(this.skillImages)
-          .filter(key => allowed.includes(key))
-          .reduce((obj, key) => {
-            obj[key] = this.skillImages[key];
-            return obj;
-          }, {});
-      },
       getImgUrl(imgUrl) {
         return require("../assets/" + imgUrl);
       },
       menuReset() {
         this.$store.dispatch("menuReset");
-      },
-      sequenceGenerator() {
-        while (this.sequenceLimit >= 0) {
-          let n = Math.floor(Math.random() * this.menuOptions.length);
-          this.sequence.push(n);
-          this.sequenceLimit--;
-        }
-        //// run a loop that choses these indexes and than outlines them with an interval to call it again with a fresh sequence
       }
     },
     computed: {

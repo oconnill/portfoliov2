@@ -6,9 +6,11 @@ vue.use(vuex);
 export const store = new vuex.Store({
   state: {
     menuOptions: [],
-    projectAttributes: [{
-      skills:[]
-    }],
+    projectAttributes: [
+      {
+        skills: []
+      }
+    ],
     typedCount: 0,
     isActive: false,
     menuTitleActive: false,
@@ -31,7 +33,7 @@ export const store = new vuex.Store({
     ],
     developmentOptions: [
       {
-        name: "RV Idaho",
+        name: "Rv Idaho",
         // image: require('../assets/rvidaho_hover.png'),
         description:
           "Worked with a team of developers on a site redesign of RVIdaho.org. My focus was updating a brochure sign-up form that gave users different options of mailed material to receive. The form also allowed for all the data to be exported by RV Idaho as a .csv using a custom date range. The forms were built with Laravel and Javascript.",
@@ -51,6 +53,9 @@ export const store = new vuex.Store({
         demoLink: "https://brundage.com/",
         type: "browser-mockup with-url",
         skills: ["vue", "laravel", "mysql", "wordpress", "sass"],
+        images: {
+          movie1: "images/brundagedemoreel.mp4"
+        },
         outlined: false
       },
       {
@@ -89,6 +94,12 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "https://github.com/oconnill/Univ-Rss",
         type: "browser-mockup with-url",
+        images: {
+          movie1: {
+            video: "",
+            poster_img: ""
+          }
+        },
         skills: ["vue", "nodejs", "html5", "mongo"],
         outlined: false
       }
