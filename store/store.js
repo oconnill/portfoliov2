@@ -40,11 +40,16 @@ export const store = new vuex.Store({
           "Worked with a team of developers on a site redesign of RVIdaho.org. My focus was updating a brochure sign-up form that gave users different options of mailed material to receive. The form also allowed for all the data to be exported by RV Idaho as a .csv using a custom date range. The forms were built with Laravel and Javascript.",
         demoLink: "https://rvidaho.org/free-camping-guide/",
         type: "browser-mockup with-url",
+        thumbnail: "thumbnails/jairph-1185383-unsplash.jpg",
         images: {
           movie1: "images/rvidahodemoreelcompressed.mp4"
         },
         skills: ["javascript", "laravel", "mysql", "wordpress", "sass"],
-        outlined: false
+        outlined: true
+      },
+      {
+        outlined: false,
+        thumbnail_movie: "thumbnails/vintagervdriving.mp4"
       },
       {
         name: "Brundage",
@@ -54,10 +59,15 @@ export const store = new vuex.Store({
         demoLink: "https://brundage.com/",
         type: "browser-mockup with-url",
         skills: ["react", "laravel", "mysql", "wordpress", "sass"],
+        thumbnail: "thumbnails/david-marcu-338675-unsplash.jpg",
         images: {
           movie1: "images/brundagedemoreel.mp4"
         },
-        outlined: false
+        outlined: true
+      },
+      {
+        outlined: false,
+        thumbnail_movie: "thumbnails/snowboarding.mp4"
       },
       {
         name: "KANBAN",
@@ -67,11 +77,12 @@ export const store = new vuex.Store({
         demoLink: "https://kanban-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-kanban",
         type: "browser-mockup with-url",
+        thumbnail: "thumbnails/alex-jones-6800-unsplash.jpg",
         images: {
           movie1: "images/kanbandemoreel.mp4"
         },
         skills: ["vue", "nodejs", "html5", "mongo"],
-        outlined: false
+        outlined: true
       },
       {
         name: "Music Selector",
@@ -84,8 +95,9 @@ export const store = new vuex.Store({
         images: {
           movie1: "images/musicselector.mp4"
         },
+        thumbnail: "thumbnails/roman-kraft-57268-unsplash.jpg",
         skills: ["vue", "nodejs", "html5", "mongo"],
-        outlined: false
+        outlined: true
       },
     ],
     designOptions: [

@@ -6,11 +6,29 @@
         <div
           class="backgroundGridImage col-3"
           v-if="menuOptions.length > 3"
-          v-for="(menuOption, index) in menuOptions"
+          v-for="(menuOption, key) in menuOptions"
           v-bind:style="{ top: menuOption.top }"
-          v-bind:class="{outlined: menuOption.outlined}"
         >
-          {{ menuOption.name }}
+          <div v-bind:class="{outlined: menuOption.outlined}">
+            <img
+              class="thumbnail"
+              :src="getImgUrl(menuOption.thumbnail)"
+              alt=""
+            />
+            <div v-if="(menuOption.thumbnail_movie)">
+              <video
+                :load="log(menuOption.thumbnail_movie)"
+                :src="getImgUrl(menuOption.thumbnail_movie)"
+                poster="nice-default.jpg"
+                autoplay
+                loop
+              ></video>
+            </div>
+          </div>
+
+          <!-- <div v-if="menuOption.thumbnail_exists">
+                here
+              </div> -->
         </div>
       </div>
 
@@ -113,8 +131,13 @@
       };
     },
     methods: {
+      log(data) {
+        console.log(data);
+      },
       getImgUrl(imgUrl) {
-        return require("../assets/" + imgUrl);
+        if (imgUrl) {
+          return require("../assets/" + imgUrl);
+        }
       },
       menuReset() {
         this.$store.dispatch("menuReset");
@@ -139,7 +162,7 @@
         }
       },
       designPhoto() {
-        return this.$store.state.designPhoto
+        return this.$store.state.designPhoto;
       },
       projectAttributes() {
         return this.$store.state.projectAttributes;

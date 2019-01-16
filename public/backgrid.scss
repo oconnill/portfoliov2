@@ -18,6 +18,10 @@ video {
   top: 40vh;
 }
 
+.thumbnail {
+  width: 100%;
+}
+
 .software-icon {
   display: flex;
   justify-content: center;
@@ -28,17 +32,16 @@ video {
 }
 
 .inner-icon img {
-object-fit: contain;
-height: 45px;
+  object-fit: contain;
+  height: 45px;
 }
 
 .outter-icon {
-  padding-right: 10px
+  padding-right: 10px;
 }
 
 .outlined {
-  border:solid black 1px;
-  padding: 10px;
+  border: solid black 1px;
 }
 
 .backgroundGridImage {
@@ -71,12 +74,12 @@ height: 45px;
   max-width: 500px;
   line-height: 1.5;
   margin: auto;
-  padding: 40px
+  padding: 40px;
 }
 
 .project-title {
   text-align: center;
-  padding:40px
+  padding: 40px;
 }
 
 .browser-mockup {
@@ -115,12 +118,12 @@ height: 45px;
   display: block;
 }
 
-.complementary-img{
+.complementary-img {
   width: 100%;
 }
 
 @media (max-width: 768px) {
-  .mobile-reverse{
+  .mobile-reverse {
     display: flex;
     flex-direction: column-reverse;
   }
