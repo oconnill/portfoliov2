@@ -16,6 +16,7 @@ export const store = new vuex.Store({
     menuTitleActive: false,
     beenClicked: false,
     singlePageView: false,
+    designPhoto: false,
     typedUrl: "",
     menuTitles: [
       {
@@ -42,7 +43,7 @@ export const store = new vuex.Store({
         images: {
           movie1: "images/rvidahodemoreelcompressed.mp4"
         },
-        skills: ["vue", "laravel", "mysql", "wordpress", "sass"],
+        skills: ["javascript", "laravel", "mysql", "wordpress", "sass"],
         outlined: false
       },
       {
@@ -52,7 +53,7 @@ export const store = new vuex.Store({
           "Updated Brundage’s weather widget and snow report. Using Laravel, Javascript and WordPress to create mobile responsive snow depth graph that displays current weather conditions and snow report. Added additional data to display on a homepage weather widget that can be controlled by the WordPress administrator.",
         demoLink: "https://brundage.com/",
         type: "browser-mockup with-url",
-        skills: ["vue", "laravel", "mysql", "wordpress", "sass"],
+        skills: ["react", "laravel", "mysql", "wordpress", "sass"],
         images: {
           movie1: "images/brundagedemoreel.mp4"
         },
@@ -86,23 +87,6 @@ export const store = new vuex.Store({
         skills: ["vue", "nodejs", "html5", "mongo"],
         outlined: false
       },
-      {
-        name: "Univ-Rss",
-        // image: require('../assets/univrss-hover.png'),
-        description:
-          "Univ-Rss What drives you daily? How do you want to fill up your space? Whats in your daily orbit? You need to customize your Univ-rss. Using Vue Js, Node js, Mongo Db, Eventful Api, the power of Google Oauth, and Spotify to create the ultimate custom dashboard. With drag and scale functionality.",
-        demoLink: "",
-        gitHubLink: "https://github.com/oconnill/Univ-Rss",
-        type: "browser-mockup with-url",
-        images: {
-          movie1: {
-            video: "",
-            poster_img: ""
-          }
-        },
-        skills: ["vue", "nodejs", "html5", "mongo"],
-        outlined: false
-      }
     ],
     designOptions: [
       {
@@ -165,12 +149,15 @@ export const store = new vuex.Store({
 
       switch (choice) {
         case "development":
+          this.state.designPhoto = false;
           commit("setMenuOptions", this.state.developmentOptions);
           break;
         case "design":
+          this.state.designPhoto = true;
           commit("setMenuOptions", this.state.designOptions);
           break;
         case "photography":
+          this.state.designPhoto = true;
           commit("setMenuOptions", this.state.photographyOptions);
           break;
       }
@@ -187,7 +174,6 @@ export const store = new vuex.Store({
 
       commit("setProjectChoice", results);
       this.state.singlePageView = true;
-      // dispatch("typeWriter")
     },
     // typeWriter() {
     //   let speed = 50;

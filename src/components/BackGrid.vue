@@ -51,10 +51,13 @@
           <div class="col-1 red"></div>
         </div>
 
-        <div class="row">
-          <div v-for="projectAttribute in projectAttributes" class="col-12">
+        <div class="row" v-if="designPhoto">
+          <div v-for="projectAttribute in projectAttributes">
             <div class="" v-for="(image, key) in projectAttribute.images">
-              <div class="comp-image-frame" v-if="key !== 'featured_image'">
+              <div
+                class="comp-image-frame col-12"
+                v-if="key !== 'featured_image'"
+              >
                 <img class="complementary-img" :src="getImgUrl(image)" alt="" />
               </div>
             </div>
@@ -101,11 +104,11 @@
           wordpress: "software_icons/WordPress-logotype-alternative.png",
           html5: "software_icons/HTML5_Logo.svg",
           laravel: "software_icons/laravellogo.svg",
+          javascript: "software_icons/JavaScript-logo.png",
           nodejs: "software_icons/nodejs.png",
+          react: "software_icons/React-icon.svg",
           sass: "software_icons/sasslogo.png",
-          mongo: "software_icons/MongoDB_Gray_Logo_FullColor_RGB-01.jpg",
-          react: "",
-          javascript: ""
+          mongo: "software_icons/MongoDB_Gray_Logo_FullColor_RGB-01.jpg"
         }
       };
     },
@@ -134,6 +137,9 @@
 
           return filtered;
         }
+      },
+      designPhoto() {
+        return this.$store.state.designPhoto
       },
       projectAttributes() {
         return this.$store.state.projectAttributes;
