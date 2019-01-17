@@ -10,14 +10,21 @@
           v-bind:style="{ top: menuOption.top }"
         >
           <div v-bind:class="{outlined: menuOption.outlined}">
-            <img
-              class="thumbnail"
-              :src="getImgUrl(menuOption.thumbnail)"
-              alt=""
-            />
+            <a
+              v-if="!menuOption.thumbnail_movie"
+              @mouseover="boxOutline(menuOption)"
+              @mouseleave="boxOutlineLeave(menuOption)"
+              href="#"
+              @click="openProject(menuOption.name)"
+            >
+              <img
+                class="thumbnail"
+                :src="getImgUrl(menuOption.thumbnail)"
+                alt=""
+              />
+            </a>
             <div v-if="(menuOption.thumbnail_movie)">
               <video
-                :load="log(menuOption.thumbnail_movie)"
                 :src="getImgUrl(menuOption.thumbnail_movie)"
                 poster="nice-default.jpg"
                 autoplay
@@ -25,10 +32,6 @@
               ></video>
             </div>
           </div>
-
-          <!-- <div v-if="menuOption.thumbnail_exists">
-                here
-              </div> -->
         </div>
       </div>
 
@@ -131,9 +134,10 @@
       };
     },
     methods: {
-      log(data) {
-        console.log(data);
-      },
+      //Logs Data from template when needed
+      // log(data) {
+      //   console.log(data);
+      // },
       getImgUrl(imgUrl) {
         if (imgUrl) {
           return require("../assets/" + imgUrl);
@@ -141,6 +145,26 @@
       },
       menuReset() {
         this.$store.dispatch("menuReset");
+      },
+      boxOutline(project) {
+        project.outlined = true;
+      },
+      boxOutlineLeave(project) {
+        project.outlined = false;
+      },
+      openProject(choice) {
+        this.$store.dispatch("openProject", choice);
+        this.typedCount = 0;
+        this.typeWriter();
+      },
+      typeWriter() {
+        let speed = 50;
+        let url = this.$store.state.projectAttributes[0]["demoLink"];
+        if (this.typedCount < url.length) {
+          this.$store.state.typedUrl += url.charAt(this.typedCount);
+          this.typedCount++;
+          setTimeout(this.typeWriter, speed);
+        }
       }
     },
     computed: {
