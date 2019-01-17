@@ -34,7 +34,7 @@ export const store = new vuex.Store({
     ],
     developmentOptions: [
       {
-        name: "Rv Idaho",
+        name: "RvIdaho.org",
         // image: require('../assets/rvidaho_hover.png'),
         description:
           "Worked with a team of developers on a site redesign of RVIdaho.org. My focus was updating a brochure sign-up form that gave users different options of mailed material to receive. The form also allowed for all the data to be exported by RV Idaho as a .csv using a custom date range. The forms were built with Laravel and Javascript.",
@@ -52,7 +52,7 @@ export const store = new vuex.Store({
         thumbnail_movie: "thumbnails/vintagervdriving.mp4"
       },
       {
-        name: "Brundage",
+        name: "Brundage Mountain",
         // image: require('../assets/brundage_hover.png'),
         description:
           "Updated Brundage’s weather widget and snow report. Using Laravel, Javascript and WordPress to create mobile responsive snow depth graph that displays current weather conditions and snow report. Added additional data to display on a homepage weather widget that can be controlled by the WordPress administrator.",
@@ -70,7 +70,7 @@ export const store = new vuex.Store({
         thumbnail_movie: "thumbnails/snowboarding.mp4"
       },
       {
-        name: "KANBAN",
+        name: "Kanban",
         // image: require('../assets/kanban-hover.png'),
         description:
           "Organize work flow with custom boards, lists, tasks, and notes. Whether it’s for work, a side project or even the next family vacation, KANBAN helps your team stay organized.",
@@ -88,12 +88,12 @@ export const store = new vuex.Store({
         name: "Music Selector",
         // image: require('../assets/music-selector-hover.png'),
         description:
-          "Using the frontend framework Vue Js with Mongo DB and NodeJs to access the API of Apple I Tunes",
+          "Using the frontend framework Vue Js with Mongo DB and NodeJs to access the API of Apple I Tunes. Search by artist or song through I Tunes to create a playlist of music samples",
         demoLink: "https://vue-music-oconnell.herokuapp.com/",
         gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
         type: "browser-mockup with-url",
         images: {
-          movie1: "images/musicselector.mp4"
+          movie1: "images/musicselectordemoreel.mp4"
         },
         thumbnail: "thumbnails/roman-kraft-57268-unsplash.jpg",
         skills: ["vue", "nodejs", "html5", "mongo"],
@@ -107,12 +107,38 @@ export const store = new vuex.Store({
         description:
           "Identity and Branding for use on cocktail menu. Local 22 Chicago",
         demoLink: "",
-        gitHubLink: "https://github.com/oconnill/Univ-Rss",
+        gitHubLink: "",
         outlined: false,
         images: {
           featured_image: "images/chicagobeersbadgehelmet.png",
           img1: "images/chicagobeerslargetitle.png",
           img2: "images/chicagobeersicons.png"
+        }
+      },
+      {
+        name: "Years - 1986-1994",
+        description:
+          "An experiment in design and color. Representing years with respective trends and brands. From teva sandals of the 90's to inspiration from championship soccer teams of the late 1980's",
+        demoLink: "",
+        gitHubLink: "",
+        outlined: false,
+        images: {
+          featured_image: "images/1986web.png",
+          img1: "images/postergrid.png",
+          img2: "images/1986web.png"
+        }
+      },
+      {
+        name: "Early Childhood Behavior - Learning Seed",
+        description:
+          "Packaging design for educational entertainment company Learning Seed. Uses a representational film reel to show the path and journey of being a new parent. Emphasizing the winding twisting road of caregiving and discipline in early childhood. Paired with imagery showing range in emotion, age, and temperment",
+        demoLink: "",
+        gitHubLink: "",
+        outlined: false,
+        images: {
+          featured_image: "images/earlychildhoodfront.png",
+          img1: "images/earlychildhoodfront.png",
+          img2: "images/earlychildhoodback.png",
         }
       }
     ],
