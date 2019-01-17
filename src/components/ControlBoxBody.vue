@@ -7,7 +7,7 @@
         v-show="menuTitle.show"
         @click="activeClick(menuTitle.title)"
       >
-        {{ menuTitle.title }}
+        <a href="#"> {{ menuTitle.title }} </a>
       </h3>
     </div>
     <div v-show="beenClicked">
@@ -17,7 +17,14 @@
             v-for="menuOption in menuOptions"
             @click="openProject(menuOption.name)"
           >
-            <h3><a @mouseover="boxOutline(menuOption)" v-on:mouseleave="boxOutlineLeave(menuOption)" href="#">{{ menuOption.name }}</a></h3>
+            <h3>
+              <a
+                @mouseover="boxOutline(menuOption)"
+                v-on:mouseleave="boxOutlineLeave(menuOption)"
+                href="#"
+                >{{ menuOption.name }}</a
+              >
+            </h3>
           </li>
         </ul>
       </div>
@@ -48,7 +55,7 @@
       },
       menuTitles() {
         return this.$store.state.menuTitles;
-      },
+      }
     },
     methods: {
       activeClick(choice) {
@@ -57,7 +64,7 @@
       boxOutline(project) {
         project.outlined = true;
       },
-      boxOutlineLeave(project){
+      boxOutlineLeave(project) {
         project.outlined = false;
       },
       openProject(choice) {
