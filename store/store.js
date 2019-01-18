@@ -118,9 +118,11 @@ export const store = new vuex.Store({
         gitHubLink: "",
         outlined: false,
         images: {
-          featured_image: "images/1986web.png",
-          img1: "images/postergrid.png",
-          img2: "images/1986web.png"
+          featured_image: "images/1986-1987.png",
+          img1: "images/1988-1990.png",
+          img2: "images/1991-1994.png",
+          img3: "images/1992-wide.png",
+          img4: "images/postergrid.png"
         }
       },
       {
