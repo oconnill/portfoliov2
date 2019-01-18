@@ -6,7 +6,7 @@
         <div
           class="backgroundGridImage col-3"
           v-if="menuOptions.length > 3"
-          v-for="(menuOption, key) in menuOptions"
+          v-for="menuOption in menuOptions"
           v-bind:style="{ top: menuOption.top }"
         >
           <div v-bind:class="{outlined: menuOption.outlined}">
@@ -88,7 +88,7 @@
         <div class="row icon-box">
           <div class="col-3"></div>
           <div class="col-12 col-lg-8 ">
-            <div class="" v-for="projectAttribute in projectAttributes">
+            <div class="">
               <div class="software-icon">
                 <div class="outter-icon" v-for="icon in filtered">
                   <div class="inner-icon">

@@ -230,18 +230,6 @@ export const store = new vuex.Store({
       commit("setProjectChoice", results);
       this.state.singlePageView = true;
     },
-    // typeWriter() {
-    //   let speed = 50;
-    //   let count = this.state.typedCount;
-    //   let url = this.state.projectAttributes[0]["demoLink"];
-
-    //   if (count < url.length) {
-    //     this.state.typedUrl += url.charAt(count);
-    //     count++;
-    //     setTimeout(this.typeWriter, speed);
-    //   }
-    //   console.log(count)
-    // },
     menuReset({ commit }) {
       commit("setMenuOptions", this.state.standardMenuOptions);
     },
