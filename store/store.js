@@ -59,7 +59,7 @@ export const store = new vuex.Store({
         skills: ["react", "laravel", "mysql", "wordpress", "sass"],
         thumbnail: "thumbnails/david-marcu-338675-unsplash.jpg",
         images: {
-          movie1: "images/brundagedemoreel.mp4"
+          movie1: "images/brundagemobile.mp4"
         },
         outlined: true
       },
@@ -154,12 +154,20 @@ export const store = new vuex.Store({
     ],
     photographyOptions: [
       {
-        name: "Dublin Summer 1990",
+        name: "Iceland",
         description:
-          "Identity and Branding for use on cocktail menu. Local 22 Chicago",
+          "",
         demoLink: "",
-        gitHubLink: "https://github.com/oconnill/Univ-Rss",
-        outlined: false
+        gitHubLink: "",
+        outlined: false,
+        images: {
+          featured_image: "photography/036.jpg",
+          img1: "photography/001.jpg",
+          img2: "photography/006.jpg",
+          img3: "photography/013.jpg",
+          img4: "photography/023.jpg",
+          img5: "photography/029.jpg"
+        }
       }
     ]
   },
