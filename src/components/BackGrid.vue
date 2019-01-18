@@ -1,117 +1,118 @@
 <template>
-  <div class="mobile-reverse">
-    <div>
-      <div > 
-        <div class="back-grid row" v-show="!singlePageView">
-          <div class="col-3"></div>
-          <div
-            class="backgroundGridImage col-3"
-            v-if="menuOptions.length > 3"
-            v-for="menuOption in menuOptions"
-            v-bind:style="{ top: menuOption.top }"
-          >
-            <div v-bind:class="{outlined: menuOption.outlined}">
-              <a
-                v-if="!menuOption.thumbnail_movie"
-                @mouseover="boxOutline(menuOption)"
-                @mouseleave="boxOutlineLeave(menuOption)"
-                href="#"
-                @click="openProject(menuOption.name)"
-              >
-                <img
-                  class="thumbnail"
-                  :src="getImgUrl(menuOption.thumbnail)"
-                  alt=""
-                />
-              </a>
-              <div v-if="(menuOption.thumbnail_movie)">
-                <video
-                  :src="getImgUrl(menuOption.thumbnail_movie)"
-                  poster="nice-default.jpg"
-                  autoplay
-                  loop
-                ></video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div v-show="singlePageView">
-        <div class="row">
-          <div class="col-3 red"></div>
-          <div
-            class="col-12 col-lg-8 green"
-            v-for="projectAttribute in projectAttributes"
-          >
-            <div class="project-title">
-              <h2>{{ projectAttribute.name }}</h2>
-            </div>
-            <div v-bind:class="projectAttribute.type">
-              <div class="browser-input">{{ typedUrl }}</div>
+  <div class="container">
+      <div class="mobile-reverse">
+          <div>
+            <div class="back-grid row" v-show="!singlePageView">
+              <div class="col-3"></div>
               <div
-                class="mock-up-frame"
-                v-for="(image, key) in projectAttribute.images"
+                class="backgroundGridImage col-3"
+                v-if="menuOptions.length > 3"
+                v-for="menuOption in menuOptions"
+                v-bind:style="{ top: menuOption.top }"
               >
-                <div v-if="key == 'featured_image'">
-                  <img :src="getImgUrl(image)" v-bind:alt="image" />
-                </div>
-                <div v-if="key == 'movie1'">
-                  <!-- need a poster image -->
-                  <video
-                    :src="getImgUrl(image)"
-                    poster="nice-default.jpg"
-                    autoplay
-                    loop
-                  ></video>
-                </div>
+                <div v-bind:class="{outlined: menuOption.outlined}">
+                    <a
+                      v-if="!menuOption.thumbnail_movie"
+                      @mouseover="boxOutline(menuOption)"
+                      @mouseleave="boxOutlineLeave(menuOption)"
+                      href="#"
+                      @click="openProject(menuOption.name)"
+                    >
+                      <img
+                        class="thumbnail"
+                        :src="getImgUrl(menuOption.thumbnail)"
+                        alt=""
+                      />
+                    </a>
+                    <div v-if="(menuOption.thumbnail_movie)">
+                      <video
+                        :src="getImgUrl(menuOption.thumbnail_movie)"
+                        poster="nice-default.jpg"
+                        autoplay
+                        loop
+                      ></video>
+                    </div>
+                  </div>
               </div>
             </div>
-            <div class="project-text-block">
-              {{ projectAttribute.description }}
-            </div>
-          </div>
-          <div class="col-1 red"></div>
-        </div>
-
-        <div class="row" v-if="designPhoto">
-          <div v-for="projectAttribute in projectAttributes">
-            <div class="" v-for="(image, key) in projectAttribute.images">
-              <div
-                class="comp-image-frame col-12"
-                v-if="key !== 'featured_image'"
-              >
-                <img class="complementary-img" :src="getImgUrl(image)" alt="" />
+      
+            <div v-show="singlePageView">
+              <div class="row">
+                <div class="col-3 red"></div>
+                <div
+                  class="col-12 col-lg-8 green"
+                  v-for="projectAttribute in projectAttributes"
+                >
+                  <div class="project-title">
+                    <h2>{{ projectAttribute.name }}</h2>
+                  </div>
+                  <div v-bind:class="projectAttribute.type">
+                    <div class="browser-input">{{ typedUrl }}</div>
+                    <div
+                      class="mock-up-frame"
+                      v-for="(image, key) in projectAttribute.images"
+                    >
+                      <div v-if="key == 'featured_image'">
+                        <img :src="getImgUrl(image)" v-bind:alt="image" />
+                      </div>
+                      <div v-if="key == 'movie1'">
+                        <!-- need a poster image -->
+                        <video
+                          :src="getImgUrl(image)"
+                          poster="nice-default.jpg"
+                          autoplay
+                          loop
+                        ></video>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="project-text-block">
+                    {{ projectAttribute.description }}
+                  </div>
+                </div>
+                <div class="col-1 red"></div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row icon-box">
-          <div class="col-3"></div>
-          <div class="col-12 col-lg-8 ">
-            <div class="">
-              <div class="software-icon">
-                <div class="outter-icon" v-for="icon in filtered" :key="icon">
-                  <div class="inner-icon">
-                    <img :src="getImgUrl(icon)" alt="" />
+      
+              <div class="row" v-if="designPhoto">
+                <div v-for="projectAttribute in projectAttributes">
+                  <div class="" v-for="(image, key) in projectAttribute.images">
+                    <div
+                      class="comp-image-frame col-12"
+                      v-if="key !== 'featured_image'"
+                    >
+                      <img class="complementary-img" :src="getImgUrl(image)" alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
+      
+              <div class="row icon-box">
+                <div class="col-3"></div>
+                <div class="col-12 col-lg-8 ">
+                  <div class="">
+                    <div class="software-icon">
+                      <div class="outter-icon" v-for="icon in filtered" :key="icon">
+                        <div class="inner-icon">
+                          <img :src="getImgUrl(icon)" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-1 red"></div>
+              </div>
             </div>
           </div>
-          <div class="col-1 red"></div>
+          <ControlBox></ControlBox>
         </div>
-      </div>
-    </div>
-    <ControlBox></ControlBox>
   </div>
+  
 </template>
 
 <script>
   import ControlBox from "./ControlBox.vue";
   import "../../public/backgrid.scss";
-  
+
   export default {
     name: "app",
     components: {

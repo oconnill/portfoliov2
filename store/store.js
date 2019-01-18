@@ -268,7 +268,7 @@ export const store = new vuex.Store({
         if (i <= 0) {
           this.state.menuOptions[i]["top"] = 10 + "vh";
         } else {
-          this.state.menuOptions[i]["top"] = i * 40 + "vh";
+          this.state.menuOptions[i]["top"] = i * 30 + "vh";
         }
       }
     },
@@ -282,7 +282,6 @@ export const store = new vuex.Store({
       }
     }
   },
-  methods: {}
 });
 
 export default store;
