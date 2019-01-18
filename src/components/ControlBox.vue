@@ -18,7 +18,7 @@
             <a href="https://github.com/oconnill" target="_blank"
               ><i class="fab fa-github"></i
             ></a>
-            <a href="" target="_blank"><i class="far fa-envelope"></i></a>
+            <a  href="mailto: daniel.richard.oconnell@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
           </div>
         </div>
 

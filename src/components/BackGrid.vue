@@ -1,35 +1,37 @@
 <template>
   <div class="mobile-reverse">
     <div>
-      <div class="back-grid row" v-show="!singlePageView">
-        <div class="col-3"></div>
-        <div
-          class="backgroundGridImage col-3"
-          v-if="menuOptions.length > 3"
-          v-for="menuOption in menuOptions"
-          v-bind:style="{ top: menuOption.top }"
-        >
-          <div v-bind:class="{outlined: menuOption.outlined}">
-            <a
-              v-if="!menuOption.thumbnail_movie"
-              @mouseover="boxOutline(menuOption)"
-              @mouseleave="boxOutlineLeave(menuOption)"
-              href="#"
-              @click="openProject(menuOption.name)"
-            >
-              <img
-                class="thumbnail"
-                :src="getImgUrl(menuOption.thumbnail)"
-                alt=""
-              />
-            </a>
-            <div v-if="(menuOption.thumbnail_movie)">
-              <video
-                :src="getImgUrl(menuOption.thumbnail_movie)"
-                poster="nice-default.jpg"
-                autoplay
-                loop
-              ></video>
+      <div > 
+        <div class="back-grid row" v-show="!singlePageView">
+          <div class="col-3"></div>
+          <div
+            class="backgroundGridImage col-3"
+            v-if="menuOptions.length > 3"
+            v-for="menuOption in menuOptions"
+            v-bind:style="{ top: menuOption.top }"
+          >
+            <div v-bind:class="{outlined: menuOption.outlined}">
+              <a
+                v-if="!menuOption.thumbnail_movie"
+                @mouseover="boxOutline(menuOption)"
+                @mouseleave="boxOutlineLeave(menuOption)"
+                href="#"
+                @click="openProject(menuOption.name)"
+              >
+                <img
+                  class="thumbnail"
+                  :src="getImgUrl(menuOption.thumbnail)"
+                  alt=""
+                />
+              </a>
+              <div v-if="(menuOption.thumbnail_movie)">
+                <video
+                  :src="getImgUrl(menuOption.thumbnail_movie)"
+                  poster="nice-default.jpg"
+                  autoplay
+                  loop
+                ></video>
+              </div>
             </div>
           </div>
         </div>
@@ -90,7 +92,7 @@
           <div class="col-12 col-lg-8 ">
             <div class="">
               <div class="software-icon">
-                <div class="outter-icon" v-for="icon in filtered">
+                <div class="outter-icon" v-for="icon in filtered" :key="icon">
                   <div class="inner-icon">
                     <img :src="getImgUrl(icon)" alt="" />
                   </div>
@@ -109,7 +111,7 @@
 <script>
   import ControlBox from "./ControlBox.vue";
   import "../../public/backgrid.scss";
-
+  
   export default {
     name: "app",
     components: {

@@ -104,6 +104,7 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "",
         outlined: false,
+        thumbnail: "images/chicagobeersbadgehelmet.png",
         images: {
           featured_image: "images/chicagobeersbadgehelmet.png",
           img1: "images/chicagobeerslargetitle.png",
@@ -117,6 +118,7 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "",
         outlined: false,
+        thumbnail:'images/1986-1987.png',
         images: {
           featured_image: "images/1986-1987.png",
           img1: "images/1988-1990.png",
@@ -132,8 +134,23 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "",
         outlined: false,
+        thumbnail: "images/earlychildhoodfront.png",
         images: {
           featured_image: "images/earlychildhoodfront.png",
+          img1: "images/earlychildhoodfront.png",
+          img2: "images/earlychildhoodback.png",
+        }
+      },
+      {
+        name: "Black Line Productions",
+        description:
+          "A logo mark for Chicago based Black Line Productions. A small film production studio with a focus on documentaries and young filmakers.",
+        demoLink: "",
+        gitHubLink: "",
+        outlined: false,
+        thumbnail: "images/blacklineproductions_big_logo.png",
+        images: {
+          featured_image: "images/blacklineproductions_big_logo.png",
           img1: "images/earlychildhoodfront.png",
           img2: "images/earlychildhoodback.png",
         }
@@ -145,6 +162,7 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "",
         outlined: false,
+        thumbnail: "images/2019magnoliamemoirfront.jpg",
         images: {
           featured_image: "images/2019magnoliamemoirfront.jpg",
           img1: "images/2019magnoliainnerview.jpg",
@@ -154,7 +172,7 @@ export const store = new vuex.Store({
     ],
     photographyOptions: [
       {
-        name: "Iceland",
+        name: "Brennivín",
         description:
           "",
         demoLink: "",
