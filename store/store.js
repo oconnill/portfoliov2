@@ -103,6 +103,19 @@ export const store = new vuex.Store({
     ],
     designOptions: [
       {
+        name: "Living Waters Records",
+        description:
+          "Living Waters Records is a Brooklyn-based record label. Home to the bands Absolutley Yours and H. Grimace",
+        demoLink: "",
+        gitHubLink: "",
+        outlined: false,
+        thumbnail: "images/livingwatersrecordsleeve.png",
+        images: {
+          featured_image: "images/livingwatersrecordsleeve.png",
+          img1: "images/livingwaterscirclelogos.png"
+        }
+      },
+      {
         name: "Chicago Beers - Illustration Identity",
         description:
           "Identity and Branding for use on cocktail menu. Local 22 Chicago",

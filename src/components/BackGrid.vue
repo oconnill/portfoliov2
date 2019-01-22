@@ -1,18 +1,16 @@
 <template>
-  <div class="mobile-reverse">
-    <div>
+  <div>
+    <div class="container">
       <Welcome v-show="areYouWelcome"></Welcome>
 
       <StaggeredImageGrid></StaggeredImageGrid>
 
       <SinglePageView></SinglePageView>
     </div>
-    <ControlBox></ControlBox>
   </div>
 </template>
 
 <script>
-  import ControlBox from "./ControlBox.vue";
   import Welcome from "./Welcome.vue";
   import StaggeredImageGrid from "./StaggeredImageGrid.vue";
   import SinglePageView from "./SinglePageView.vue";
@@ -22,7 +20,6 @@
   export default {
     name: "app",
     components: {
-      ControlBox,
       Welcome,
       StaggeredImageGrid,
       SinglePageView

@@ -2,9 +2,11 @@
   <div>
     <div class="row">
       <div class="col-6"></div>
-      <div class="col-6 right-center">
-        <div class=world-box>
-            <div class="world-gif">HEERE I AM</div>
+      <div class="col-6">
+        <div class="world-box">
+          <div class="world-gif">
+            <img :src="getImgUrl(entireworld)" alt="" />
+          </div>
         </div>
       </div>
     </div>
@@ -16,6 +18,11 @@
 
   export default {
     name: "Welcome",
+    data() {
+      return {
+        entireworld: "images/earthworld.gif"
+      };
+    },
     components: {},
     methods: {
       getImgUrl(imgUrl) {

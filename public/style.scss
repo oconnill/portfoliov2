@@ -15,9 +15,9 @@ ul {
     padding: 0;
 }
 
-.container {
-    padding-top: 15px;
-}
+// .container {
+//     padding-top: 15px;
+// }
 
 a {
     color:black;
@@ -29,3 +29,18 @@ a {
     }
 }
 
+
+@media (max-width: 768px) {
+    .mobile-reverse {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  
+    .browser-input {
+      font-size: 10px;
+    }
+  
+    .inner-icon img {
+      height: 35px;
+    }
+  }

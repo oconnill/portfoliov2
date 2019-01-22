@@ -5,8 +5,8 @@
         <div class="logo-font">Daniel O'Connell</div>
         <div class="logo-icon" @click="menuReset()">
           <div class="do-logo">
-            <div class="do-logo-d"></div>
-            <div class="do-logo-o"></div>
+            <div class="do-logo-d"><a href="#"></a></div>
+            <div class="do-logo-o"><a href="#"></a></div>
           </div>
         </div>
       </div>
