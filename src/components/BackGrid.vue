@@ -1,127 +1,100 @@
 <template>
-  <div class="container">
-      <div class="mobile-reverse">
-          <div>
-            <div class="back-grid row" v-show="!singlePageView">
-              <div class="col-3"></div>
-              <div
-                class="backgroundGridImage col-3"
-                v-if="menuOptions.length > 3"
-                v-for="menuOption in menuOptions"
-                v-bind:style="{ top: menuOption.top }"
-              >
-                <div v-bind:class="{outlined: menuOption.outlined}">
-                    <a
-                      v-if="!menuOption.thumbnail_movie"
-                      @mouseover="boxOutline(menuOption)"
-                      @mouseleave="boxOutlineLeave(menuOption)"
-                      href="#"
-                      @click="openProject(menuOption.name)"
-                    >
-                      <img
-                        class="thumbnail"
-                        :src="getImgUrl(menuOption.thumbnail)"
-                        alt=""
-                      />
-                    </a>
-                    <div v-if="(menuOption.thumbnail_movie)">
-                      <video
-                        :src="getImgUrl(menuOption.thumbnail_movie)"
-                        poster="nice-default.jpg"
-                        autoplay
-                        loop
-                      ></video>
-                    </div>
+    <div class="mobile-reverse">
+      <div>
+        <Welcome v-show="areYouWelcome"></Welcome>
+
+        <StaggeredImageGrid></StaggeredImageGrid>
+
+        <div v-show="singlePageView">
+          <div class="row">
+            <div class="col-3 red"></div>
+            <div
+              class="col-12 col-lg-8 green"
+              v-for="projectAttribute in projectAttributes"
+            >
+              <div class="project-title">
+                <h2>{{ projectAttribute.name }}</h2>
+              </div>
+              <div v-bind:class="projectAttribute.type">
+                <div class="browser-input">{{ typedUrl }}</div>
+                <div
+                  class="mock-up-frame"
+                  v-for="(image, key) in projectAttribute.images"
+                >
+                  <div v-if="key == 'featured_image'">
+                    <img :src="getImgUrl(image)" v-bind:alt="image" />
                   </div>
+                  <div v-if="key == 'movie1'">
+                    <video
+                      :src="getImgUrl(image)"
+                      :poster="getImgUrl(placeholderWatch.placeholder)"
+                      autoplay
+                      loop
+                    ></video>
+                  </div>
+                </div>
+              </div>
+              <div class="project-text-block">
+                {{ projectAttribute.description }}
               </div>
             </div>
-      
-            <div v-show="singlePageView">
-              <div class="row">
-                <div class="col-3 red"></div>
+            <div class="col-1 red"></div>
+          </div>
+
+          <div class="row" v-if="designPhoto">
+            <div v-for="projectAttribute in projectAttributes">
+              <div class="" v-for="(image, key) in projectAttribute.images">
                 <div
-                  class="col-12 col-lg-8 green"
-                  v-for="projectAttribute in projectAttributes"
+                  class="comp-image-frame col-12"
+                  v-if="key !== 'featured_image'"
                 >
-                  <div class="project-title">
-                    <h2>{{ projectAttribute.name }}</h2>
-                  </div>
-                  <div v-bind:class="projectAttribute.type">
-                    <div class="browser-input">{{ typedUrl }}</div>
-                    <div
-                      class="mock-up-frame"
-                      v-for="(image, key) in projectAttribute.images"
-                    >
-                      <div v-if="key == 'featured_image'">
-                        <img :src="getImgUrl(image)" v-bind:alt="image" />
-                      </div>
-                      <div v-if="key == 'movie1'">
-                        <!-- need a poster image -->
-                        <video
-                          :src="getImgUrl(image)"
-                          poster="nice-default.jpg"
-                          autoplay
-                          loop
-                        ></video>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="project-text-block">
-                    {{ projectAttribute.description }}
-                  </div>
+                  <img
+                    class="complementary-img"
+                    :src="getImgUrl(image)"
+                    alt=""
+                  />
                 </div>
-                <div class="col-1 red"></div>
-              </div>
-      
-              <div class="row" v-if="designPhoto">
-                <div v-for="projectAttribute in projectAttributes">
-                  <div class="" v-for="(image, key) in projectAttribute.images">
-                    <div
-                      class="comp-image-frame col-12"
-                      v-if="key !== 'featured_image'"
-                    >
-                      <img class="complementary-img" :src="getImgUrl(image)" alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-      
-              <div class="row icon-box">
-                <div class="col-3"></div>
-                <div class="col-12 col-lg-8 ">
-                  <div class="">
-                    <div class="software-icon">
-                      <div class="outter-icon" v-for="icon in filtered" :key="icon">
-                        <div class="inner-icon">
-                          <img :src="getImgUrl(icon)" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-1 red"></div>
               </div>
             </div>
           </div>
-          <ControlBox></ControlBox>
+
+          <div class="row icon-box">
+            <div class="col-3"></div>
+            <div class="col-12 col-lg-8 ">
+              <div class="">
+                <div class="software-icon">
+                  <div class="outter-icon" v-for="icon in filtered" :key="icon">
+                    <div class="inner-icon">
+                      <img :src="getImgUrl(icon)" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-1 red"></div>
+          </div>
         </div>
-  </div>
-  
+      </div>
+      <ControlBox></ControlBox>
+    </div>
 </template>
 
 <script>
   import ControlBox from "./ControlBox.vue";
+  import Welcome from "./Welcome.vue";
+  import StaggeredImageGrid from "./StaggeredImageGrid.vue"
+
   import "../../public/backgrid.scss";
 
   export default {
     name: "app",
     components: {
-      ControlBox
+      ControlBox,
+      Welcome,
+      StaggeredImageGrid
     },
     data() {
       return {
-        sequence: [],
-        sequenceLimit: 4,
         skillImages: {
           mysql: "software_icons/logo-mysql-170x115.png",
           vue: "software_icons/Vue.js_Logo.svg",
@@ -149,12 +122,6 @@
       menuReset() {
         this.$store.dispatch("menuReset");
       },
-      boxOutline(project) {
-        project.outlined = true;
-      },
-      boxOutlineLeave(project) {
-        project.outlined = false;
-      },
       openProject(choice) {
         this.$store.dispatch("openProject", choice);
         this.typedCount = 0;
@@ -173,6 +140,11 @@
     computed: {
       menuOptions() {
         return this.$store.state.menuOptions;
+      },
+      placeholderWatch() {
+        if (this.$store.state.projectAttributes.length > 0) {
+          return this.$store.state.projectAttributes[0].images;
+        }
       },
       filtered() {
         if (this.$store.state.projectAttributes[0].skills) {
@@ -199,6 +171,9 @@
       },
       typedUrl() {
         return this.$store.state.typedUrl;
+      },
+      areYouWelcome() {
+        return this.$store.state.welcome;
       }
     }
   };

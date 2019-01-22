@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <div class="container"> -->
+    <div class="container">
       <BackGrid></BackGrid>
-    <!-- </div> -->
+    </div>
   </div>
 </template>
 

@@ -17,6 +17,7 @@ export const store = new vuex.Store({
     beenClicked: false,
     singlePageView: false,
     designPhoto: false,
+    welcome: true,
     typedUrl: "",
     menuTitles: [
       {
@@ -41,7 +42,8 @@ export const store = new vuex.Store({
         type: "browser-mockup with-url",
         thumbnail: "thumbnails/jairph-1185383-unsplash.jpg",
         images: {
-          movie1: "images/rvidahodemoreelcompressed.mp4"
+          movie1: "images/rvidahodemoreelcompressed.mp4",
+          placeholder: "placeholder-images/rvidaho_placeholder.jpg"
         },
         skills: ["javascript", "laravel", "mysql", "wordpress", "sass"],
         outlined: true
@@ -59,7 +61,8 @@ export const store = new vuex.Store({
         skills: ["react", "laravel", "mysql", "wordpress", "sass"],
         thumbnail: "thumbnails/david-marcu-338675-unsplash.jpg",
         images: {
-          movie1: "images/brundagemobile.mp4"
+          movie1: "images/brundagemobile.mp4",
+          placeholder: "placeholder-images/brundage_placeholder.jpg"
         },
         outlined: true
       },
@@ -76,7 +79,8 @@ export const store = new vuex.Store({
         type: "browser-mockup with-url",
         thumbnail: "thumbnails/alex-jones-6800-unsplash.jpg",
         images: {
-          movie1: "images/kanbandemoreel.mp4"
+          movie1: "images/kanbandemoreel.mp4",
+          placeholder: "placeholder-images/kanban_placeholder.jpg"
         },
         skills: ["vue", "nodejs", "html5", "mongo"],
         outlined: true
@@ -89,12 +93,13 @@ export const store = new vuex.Store({
         gitHubLink: "https://github.com/oconnill/vue-music-checkpoint",
         type: "browser-mockup with-url",
         images: {
-          movie1: "images/musicselectordemoreel.mp4"
+          movie1: "images/musicselectordemoreel.mp4",
+          placeholder: "placeholder-images/musicselector.jpg"
         },
         thumbnail: "thumbnails/roman-kraft-57268-unsplash.jpg",
         skills: ["vue", "nodejs", "html5", "mongo"],
         outlined: true
-      },
+      }
     ],
     designOptions: [
       {
@@ -118,7 +123,7 @@ export const store = new vuex.Store({
         demoLink: "",
         gitHubLink: "",
         outlined: false,
-        thumbnail:'images/1986-1987.png',
+        thumbnail: "images/1986-1987.png",
         images: {
           featured_image: "images/1986-1987.png",
           img1: "images/1988-1990.png",
@@ -138,7 +143,7 @@ export const store = new vuex.Store({
         images: {
           featured_image: "images/earlychildhoodfront.png",
           img1: "images/earlychildhoodfront.png",
-          img2: "images/earlychildhoodback.png",
+          img2: "images/earlychildhoodback.png"
         }
       },
       {
@@ -152,7 +157,7 @@ export const store = new vuex.Store({
         images: {
           featured_image: "images/blacklineproductions_big_logo.png",
           img1: "images/earlychildhoodfront.png",
-          img2: "images/earlychildhoodback.png",
+          img2: "images/earlychildhoodback.png"
         }
       },
       {
@@ -166,15 +171,14 @@ export const store = new vuex.Store({
         images: {
           featured_image: "images/2019magnoliamemoirfront.jpg",
           img1: "images/2019magnoliainnerview.jpg",
-          img2: "images/2019magnoliabackfocus.jpg",
+          img2: "images/2019magnoliabackfocus.jpg"
         }
       }
     ],
     photographyOptions: [
       {
         name: "Brennivín",
-        description:
-          "",
+        description: "",
         demoLink: "",
         gitHubLink: "",
         outlined: false,
@@ -214,6 +218,9 @@ export const store = new vuex.Store({
     },
     setSinglePageView(state, data) {
       state.SinglePageView = data;
+    },
+    setWelcome(state, data) {
+      state.welcome = data;
     }
   },
   actions: {
@@ -253,6 +260,7 @@ export const store = new vuex.Store({
     },
     activeClick({ commit, dispatch }, choice) {
       commit("setBeenClicked", true);
+      commit("setWelcome", false);
       commit("setMenuChoice", choice);
       dispatch("menuChoice");
       dispatch("menuTitleShow");
@@ -281,7 +289,7 @@ export const store = new vuex.Store({
         }
       }
     }
-  },
+  }
 });
 
 export default store;
