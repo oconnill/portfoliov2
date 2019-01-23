@@ -129,7 +129,7 @@ export const store = new vuex.Store({
         }
       },
       {
-        name: "Chicago Beers - Illustration Identity",
+        name: "Chicago Beers",
         description:
           "Identity and Branding for use on cocktail menu. Local 22 Chicago",
         demoLink: "",
@@ -143,7 +143,7 @@ export const store = new vuex.Store({
         }
       },
       {
-        name: "Years - 1986-1994",
+        name: "1986-1994",
         description:
           "An experiment in design and color. Representing years with respective trends and brands. From teva sandals of the 90's to inspiration from championship soccer teams of the late 1980's",
         demoLink: "",
@@ -159,7 +159,7 @@ export const store = new vuex.Store({
         }
       },
       {
-        name: "Early Childhood Behavior - Learning Seed",
+        name: "Early Childhood Behavior",
         description:
           "Packaging design for educational entertainment company Learning Seed. Uses a representational film reel to show the path and journey of being a new parent. Emphasizing the winding twisting road of caregiving and discipline in early childhood. Paired with imagery showing range in emotion, age, and temperment",
         demoLink: "",
@@ -187,7 +187,7 @@ export const store = new vuex.Store({
         }
       },
       {
-        name: "Magnolia Memoir - Self Titled",
+        name: "Magnolia Memoir",
         description:
           "Identity and packaging design for Jazz Alternative band Magnolia Memoir. Inspiration from 1940's jazz albums as well as World War II icongraphy",
         demoLink: "",
