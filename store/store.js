@@ -116,6 +116,19 @@ export const store = new vuex.Store({
         }
       },
       {
+        name: "Shift Click",
+        description:
+          "Etch a Sketch inspired font. Title comes from the Adobe Illustrator shortcut for creating parrallel lines",
+        demoLink: "",
+        gitHubLink: "",
+        outlined: false,
+        thumbnail: "images/shiftclickmaintitle.png",
+        images: {
+          featured_image: "images/shiftclickmaintitle.png",
+          img1: "images/shiftclickalphabet.png"
+        }
+      },
+      {
         name: "Chicago Beers - Illustration Identity",
         description:
           "Identity and Branding for use on cocktail menu. Local 22 Chicago",
